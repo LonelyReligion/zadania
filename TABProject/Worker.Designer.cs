@@ -36,9 +36,10 @@
             // 
             // bLogOut
             // 
-            this.bLogOut.Location = new System.Drawing.Point(672, 12);
+            this.bLogOut.Location = new System.Drawing.Point(484, 18);
+            this.bLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bLogOut.Name = "bLogOut";
-            this.bLogOut.Size = new System.Drawing.Size(116, 53);
+            this.bLogOut.Size = new System.Drawing.Size(119, 59);
             this.bLogOut.TabIndex = 20;
             this.bLogOut.Text = "Log out";
             this.bLogOut.UseVisualStyleBackColor = true;
@@ -47,39 +48,43 @@
             // comboBoxTasks
             // 
             this.comboBoxTasks.FormattingEnabled = true;
-            this.comboBoxTasks.Location = new System.Drawing.Point(36, 41);
+            this.comboBoxTasks.Location = new System.Drawing.Point(40, 34);
+            this.comboBoxTasks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxTasks.Name = "comboBoxTasks";
-            this.comboBoxTasks.Size = new System.Drawing.Size(260, 24);
+            this.comboBoxTasks.Size = new System.Drawing.Size(292, 28);
             this.comboBoxTasks.TabIndex = 29;
             // 
             // cbDone
             // 
             this.cbDone.AutoSize = true;
-            this.cbDone.Location = new System.Drawing.Point(319, 45);
+            this.cbDone.Location = new System.Drawing.Point(40, 144);
+            this.cbDone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbDone.Name = "cbDone";
-            this.cbDone.Size = new System.Drawing.Size(62, 20);
+            this.cbDone.Size = new System.Drawing.Size(74, 24);
             this.cbDone.TabIndex = 27;
             this.cbDone.Text = "Done";
             this.cbDone.UseVisualStyleBackColor = true;
             // 
             // bSaveStatus
             // 
-            this.bSaveStatus.Location = new System.Drawing.Point(319, 71);
+            this.bSaveStatus.Location = new System.Drawing.Point(484, 110);
+            this.bSaveStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bSaveStatus.Name = "bSaveStatus";
-            this.bSaveStatus.Size = new System.Drawing.Size(106, 46);
+            this.bSaveStatus.Size = new System.Drawing.Size(119, 58);
             this.bSaveStatus.TabIndex = 26;
             this.bSaveStatus.Text = "Save status";
             this.bSaveStatus.UseVisualStyleBackColor = true;
             // 
             // Worker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(621, 190);
             this.Controls.Add(this.comboBoxTasks);
             this.Controls.Add(this.cbDone);
             this.Controls.Add(this.bSaveStatus);
             this.Controls.Add(this.bLogOut);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Worker";
             this.Text = "Task Management System - Worker Console";
             this.ResumeLayout(false);

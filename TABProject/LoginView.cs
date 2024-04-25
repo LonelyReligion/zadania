@@ -43,5 +43,12 @@ namespace TABProject
                 tbPassword.Clear();
             }
         }
+
+        private void LoginView_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) {
+                button1_Click(sender, e);
+            }
+        }
     }
 }
