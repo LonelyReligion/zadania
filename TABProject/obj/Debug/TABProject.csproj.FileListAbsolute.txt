@@ -1,0 +1,16 @@
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\bin\Debug\TABProject.exe.config
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\bin\Debug\TABProject.exe
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\bin\Debug\TABProject.pdb
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.csproj.AssemblyReference.cache
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.LoginView.resources
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.Properties.Resources.resources
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.csproj.GenerateResource.cache
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.csproj.CoreCompileInputs.cache
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.exe
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.pdb
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.ACCManager.resources
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.AddTask.resources
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.AdminView.resources
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.NewIssue.resources
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.ProductManager.resources
+C:\Users\kasia\OneDrive\Pulpit\TABProject\TABProject\obj\Debug\TABProject.Worker.resources
