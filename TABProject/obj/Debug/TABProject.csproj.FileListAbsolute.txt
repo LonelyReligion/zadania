@@ -47,3 +47,8 @@ C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\obj\Debug\TABProject.c
 C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\obj\Debug\TABProject.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\obj\Debug\TABProject.exe
 C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\obj\Debug\TABProject.pdb
+C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\obj\Debug\TABProject.csproj.CopyComplete

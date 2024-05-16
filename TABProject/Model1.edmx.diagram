@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05f1dcd16dc4433e8ce60959b31d5665" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="TABModel.app_user" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TABModel.client" Width="1.5" PointX="1.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TABModel.issue" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TABModel.request" Width="1.5" PointX="7.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TABModel.sysdiagram" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TABModel.system" Width="1.5" PointX="1.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TABModel.version" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TABModel.worker_task" Width="1.5" PointX="10.5" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="TABModel.FK_Issue_ProductManager" ManuallyRouted="false" />
+        <AssociationConnector Association="TABModel.FK_Request_AccountManager" ManuallyRouted="false" />
+        <AssociationConnector Association="TABModel.FK_WorkerTask_Worker" ManuallyRouted="false" />
+        <AssociationConnector Association="TABModel.FK_System_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="TABModel.FK_Issue_Request" ManuallyRouted="false" />
+        <AssociationConnector Association="TABModel.FK_WorkerTask_Issue" ManuallyRouted="false" />
+        <AssociationConnector Association="TABModel.FK_Request_Version" ManuallyRouted="false" />
+        <AssociationConnector Association="TABModel.FK_Version_System" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

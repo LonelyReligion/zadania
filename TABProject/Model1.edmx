@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TABModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="app_user">
+          <Key>
+            <PropertyRef Name="id_app_user" />
+          </Key>
+          <Property Name="id_app_user" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="password" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="login" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="id_client" />
+          </Key>
+          <Property Name="id_client" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="issue">
+          <Key>
+            <PropertyRef Name="id_issue" />
+          </Key>
+          <Property Name="id_issue" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_product_manager" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="type" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="status" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" Nullable="false" />
+          <Property Name="result" Type="varchar(max)" />
+          <Property Name="dt_open" Type="datetime" Nullable="false" />
+          <Property Name="id_request" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="dt_final_cancel" Type="datetime" />
+        </EntityType>
+        <EntityType Name="request">
+          <Key>
+            <PropertyRef Name="id_request" />
+          </Key>
+          <Property Name="id_request" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_account_manager" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="id_version" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="dt_open" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" Nullable="false" />
+          <Property Name="result" Type="varchar(max)" />
+          <Property Name="dt_final_cancel" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="system">
+          <Key>
+            <PropertyRef Name="id_system" />
+          </Key>
+          <Property Name="id_system" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_related_system" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="id_client" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="version">
+          <Key>
+            <PropertyRef Name="id_version" />
+          </Key>
+          <Property Name="number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_version" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_system" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="worker_task">
+          <Key>
+            <PropertyRef Name="id_worker_task" />
+          </Key>
+          <Property Name="id_worker_task" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="status" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="id_worker" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="result" Type="varchar(max)" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" Nullable="false" />
+          <Property Name="dt_open" Type="datetime" Nullable="false" />
+          <Property Name="id_issue" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="dt_final_cancel" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Issue_ProductManager">
+          <End Role="app_user" Type="Self.app_user" Multiplicity="0..1" />
+          <End Role="issue" Type="Self.issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="app_user">
+              <PropertyRef Name="id_app_user" />
+            </Principal>
+            <Dependent Role="issue">
+              <PropertyRef Name="id_product_manager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Issue_Request">
+          <End Role="request" Type="Self.request" Multiplicity="1" />
+          <End Role="issue" Type="Self.issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="request">
+              <PropertyRef Name="id_request" />
+            </Principal>
+            <Dependent Role="issue">
+              <PropertyRef Name="id_request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_AccountManager">
+          <End Role="app_user" Type="Self.app_user" Multiplicity="1" />
+          <End Role="request" Type="Self.request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="app_user">
+              <PropertyRef Name="id_app_user" />
+            </Principal>
+            <Dependent Role="request">
+              <PropertyRef Name="id_account_manager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Version">
+          <End Role="version" Type="Self.version" Multiplicity="1" />
+          <End Role="request" Type="Self.request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="version">
+              <PropertyRef Name="id_version" />
+            </Principal>
+            <Dependent Role="request">
+              <PropertyRef Name="id_version" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_System_Client">
+          <End Role="client" Type="Self.client" Multiplicity="1" />
+          <End Role="system" Type="Self.system" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client" />
+            </Principal>
+            <Dependent Role="system">
+              <PropertyRef Name="id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Version_System">
+          <End Role="system" Type="Self.system" Multiplicity="1" />
+          <End Role="version" Type="Self.version" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="system">
+              <PropertyRef Name="id_system" />
+            </Principal>
+            <Dependent Role="version">
+              <PropertyRef Name="id_system" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkerTask_Issue">
+          <End Role="issue" Type="Self.issue" Multiplicity="1" />
+          <End Role="worker_task" Type="Self.worker_task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue">
+              <PropertyRef Name="id_issue" />
+            </Principal>
+            <Dependent Role="worker_task">
+              <PropertyRef Name="id_issue" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkerTask_Worker">
+          <End Role="app_user" Type="Self.app_user" Multiplicity="0..1" />
+          <End Role="worker_task" Type="Self.worker_task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="app_user">
+              <PropertyRef Name="id_app_user" />
+            </Principal>
+            <Dependent Role="worker_task">
+              <PropertyRef Name="id_worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TABModelStoreContainer">
+          <EntitySet Name="app_user" EntityType="Self.app_user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="issue" EntityType="Self.issue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="request" EntityType="Self.request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="system" EntityType="Self.system" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="version" EntityType="Self.version" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="worker_task" EntityType="Self.worker_task" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Issue_ProductManager" Association="Self.FK_Issue_ProductManager">
+            <End Role="app_user" EntitySet="app_user" />
+            <End Role="issue" EntitySet="issue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Issue_Request" Association="Self.FK_Issue_Request">
+            <End Role="request" EntitySet="request" />
+            <End Role="issue" EntitySet="issue" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_AccountManager" Association="Self.FK_Request_AccountManager">
+            <End Role="app_user" EntitySet="app_user" />
+            <End Role="request" EntitySet="request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Version" Association="Self.FK_Request_Version">
+            <End Role="version" EntitySet="version" />
+            <End Role="request" EntitySet="request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_System_Client" Association="Self.FK_System_Client">
+            <End Role="client" EntitySet="client" />
+            <End Role="system" EntitySet="system" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Version_System" Association="Self.FK_Version_System">
+            <End Role="system" EntitySet="system" />
+            <End Role="version" EntitySet="version" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkerTask_Issue" Association="Self.FK_WorkerTask_Issue">
+            <End Role="issue" EntitySet="issue" />
+            <End Role="worker_task" EntitySet="worker_task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkerTask_Worker" Association="Self.FK_WorkerTask_Worker">
+            <End Role="app_user" EntitySet="app_user" />
+            <End Role="worker_task" EntitySet="worker_task" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TABModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="app_user">
+          <Key>
+            <PropertyRef Name="id_app_user" />
+          </Key>
+          <Property Name="id_app_user" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="issues" Relationship="Self.FK_Issue_ProductManager" FromRole="app_user" ToRole="issue" />
+          <NavigationProperty Name="requests" Relationship="Self.FK_Request_AccountManager" FromRole="app_user" ToRole="request" />
+          <NavigationProperty Name="worker_task" Relationship="Self.FK_WorkerTask_Worker" FromRole="app_user" ToRole="worker_task" />
+        </EntityType>
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="id_client" />
+          </Key>
+          <Property Name="id_client" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="systems" Relationship="Self.FK_System_Client" FromRole="client" ToRole="system" />
+        </EntityType>
+        <EntityType Name="issue">
+          <Key>
+            <PropertyRef Name="id_issue" />
+          </Key>
+          <Property Name="id_issue" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_product_manager" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="result" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dt_open" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_request" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="dt_final_cancel" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="app_user" Relationship="Self.FK_Issue_ProductManager" FromRole="issue" ToRole="app_user" />
+          <NavigationProperty Name="request" Relationship="Self.FK_Issue_Request" FromRole="issue" ToRole="request" />
+          <NavigationProperty Name="worker_task" Relationship="Self.FK_WorkerTask_Issue" FromRole="issue" ToRole="worker_task" />
+        </EntityType>
+        <EntityType Name="request">
+          <Key>
+            <PropertyRef Name="id_request" />
+          </Key>
+          <Property Name="id_request" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_account_manager" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="id_version" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="dt_open" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="result" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="dt_final_cancel" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="app_user" Relationship="Self.FK_Request_AccountManager" FromRole="request" ToRole="app_user" />
+          <NavigationProperty Name="issues" Relationship="Self.FK_Issue_Request" FromRole="request" ToRole="issue" />
+          <NavigationProperty Name="version" Relationship="Self.FK_Request_Version" FromRole="request" ToRole="version" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="system">
+          <Key>
+            <PropertyRef Name="id_system" />
+          </Key>
+          <Property Name="id_system" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_related_system" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="id_client" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="client" Relationship="Self.FK_System_Client" FromRole="system" ToRole="client" />
+          <NavigationProperty Name="versions" Relationship="Self.FK_Version_System" FromRole="system" ToRole="version" />
+        </EntityType>
+        <EntityType Name="version">
+          <Key>
+            <PropertyRef Name="id_version" />
+          </Key>
+          <Property Name="number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_version" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_system" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="requests" Relationship="Self.FK_Request_Version" FromRole="version" ToRole="request" />
+          <NavigationProperty Name="system" Relationship="Self.FK_Version_System" FromRole="version" ToRole="system" />
+        </EntityType>
+        <EntityType Name="worker_task">
+          <Key>
+            <PropertyRef Name="id_worker_task" />
+          </Key>
+          <Property Name="id_worker_task" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="id_worker" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="result" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dt_open" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="id_issue" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="dt_final_cancel" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="app_user" Relationship="Self.FK_WorkerTask_Worker" FromRole="worker_task" ToRole="app_user" />
+          <NavigationProperty Name="issue" Relationship="Self.FK_WorkerTask_Issue" FromRole="worker_task" ToRole="issue" />
+        </EntityType>
+        <Association Name="FK_Issue_ProductManager">
+          <End Role="app_user" Type="Self.app_user" Multiplicity="0..1" />
+          <End Role="issue" Type="Self.issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="app_user">
+              <PropertyRef Name="id_app_user" />
+            </Principal>
+            <Dependent Role="issue">
+              <PropertyRef Name="id_product_manager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_AccountManager">
+          <End Role="app_user" Type="Self.app_user" Multiplicity="1" />
+          <End Role="request" Type="Self.request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="app_user">
+              <PropertyRef Name="id_app_user" />
+            </Principal>
+            <Dependent Role="request">
+              <PropertyRef Name="id_account_manager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkerTask_Worker">
+          <End Role="app_user" Type="Self.app_user" Multiplicity="0..1" />
+          <End Role="worker_task" Type="Self.worker_task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="app_user">
+              <PropertyRef Name="id_app_user" />
+            </Principal>
+            <Dependent Role="worker_task">
+              <PropertyRef Name="id_worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_System_Client">
+          <End Role="client" Type="Self.client" Multiplicity="1" />
+          <End Role="system" Type="Self.system" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="id_client" />
+            </Principal>
+            <Dependent Role="system">
+              <PropertyRef Name="id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Issue_Request">
+          <End Role="request" Type="Self.request" Multiplicity="1" />
+          <End Role="issue" Type="Self.issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="request">
+              <PropertyRef Name="id_request" />
+            </Principal>
+            <Dependent Role="issue">
+              <PropertyRef Name="id_request" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkerTask_Issue">
+          <End Role="issue" Type="Self.issue" Multiplicity="1" />
+          <End Role="worker_task" Type="Self.worker_task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="issue">
+              <PropertyRef Name="id_issue" />
+            </Principal>
+            <Dependent Role="worker_task">
+              <PropertyRef Name="id_issue" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Version">
+          <End Role="version" Type="Self.version" Multiplicity="1" />
+          <End Role="request" Type="Self.request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="version">
+              <PropertyRef Name="id_version" />
+            </Principal>
+            <Dependent Role="request">
+              <PropertyRef Name="id_version" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Version_System">
+          <End Role="system" Type="Self.system" Multiplicity="1" />
+          <End Role="version" Type="Self.version" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="system">
+              <PropertyRef Name="id_system" />
+            </Principal>
+            <Dependent Role="version">
+              <PropertyRef Name="id_system" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TABContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="app_user" EntityType="Self.app_user" />
+          <EntitySet Name="clients" EntityType="Self.client" />
+          <EntitySet Name="issues" EntityType="Self.issue" />
+          <EntitySet Name="requests" EntityType="Self.request" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="systems" EntityType="Self.system" />
+          <EntitySet Name="versions" EntityType="Self.version" />
+          <EntitySet Name="worker_task" EntityType="Self.worker_task" />
+          <AssociationSet Name="FK_Issue_ProductManager" Association="Self.FK_Issue_ProductManager">
+            <End Role="app_user" EntitySet="app_user" />
+            <End Role="issue" EntitySet="issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_AccountManager" Association="Self.FK_Request_AccountManager">
+            <End Role="app_user" EntitySet="app_user" />
+            <End Role="request" EntitySet="requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkerTask_Worker" Association="Self.FK_WorkerTask_Worker">
+            <End Role="app_user" EntitySet="app_user" />
+            <End Role="worker_task" EntitySet="worker_task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_System_Client" Association="Self.FK_System_Client">
+            <End Role="client" EntitySet="clients" />
+            <End Role="system" EntitySet="systems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Issue_Request" Association="Self.FK_Issue_Request">
+            <End Role="request" EntitySet="requests" />
+            <End Role="issue" EntitySet="issues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkerTask_Issue" Association="Self.FK_WorkerTask_Issue">
+            <End Role="issue" EntitySet="issues" />
+            <End Role="worker_task" EntitySet="worker_task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Version" Association="Self.FK_Request_Version">
+            <End Role="version" EntitySet="versions" />
+            <End Role="request" EntitySet="requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Version_System" Association="Self.FK_Version_System">
+            <End Role="system" EntitySet="systems" />
+            <End Role="version" EntitySet="versions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TABModelStoreContainer" CdmEntityContainer="TABContext">
+          <EntitySetMapping Name="app_user">
+            <EntityTypeMapping TypeName="TABModel.app_user">
+              <MappingFragment StoreEntitySet="app_user">
+                <ScalarProperty Name="id_app_user" ColumnName="id_app_user" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clients">
+            <EntityTypeMapping TypeName="TABModel.client">
+              <MappingFragment StoreEntitySet="client">
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="issues">
+            <EntityTypeMapping TypeName="TABModel.issue">
+              <MappingFragment StoreEntitySet="issue">
+                <ScalarProperty Name="id_issue" ColumnName="id_issue" />
+                <ScalarProperty Name="id_product_manager" ColumnName="id_product_manager" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="dt_open" ColumnName="dt_open" />
+                <ScalarProperty Name="id_request" ColumnName="id_request" />
+                <ScalarProperty Name="dt_final_cancel" ColumnName="dt_final_cancel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="requests">
+            <EntityTypeMapping TypeName="TABModel.request">
+              <MappingFragment StoreEntitySet="request">
+                <ScalarProperty Name="id_request" ColumnName="id_request" />
+                <ScalarProperty Name="id_account_manager" ColumnName="id_account_manager" />
+                <ScalarProperty Name="id_version" ColumnName="id_version" />
+                <ScalarProperty Name="dt_open" ColumnName="dt_open" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="dt_final_cancel" ColumnName="dt_final_cancel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TABModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="systems">
+            <EntityTypeMapping TypeName="TABModel.system">
+              <MappingFragment StoreEntitySet="system">
+                <ScalarProperty Name="id_system" ColumnName="id_system" />
+                <ScalarProperty Name="id_related_system" ColumnName="id_related_system" />
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="versions">
+            <EntityTypeMapping TypeName="TABModel.version">
+              <MappingFragment StoreEntitySet="version">
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="id_version" ColumnName="id_version" />
+                <ScalarProperty Name="id_system" ColumnName="id_system" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="worker_task">
+            <EntityTypeMapping TypeName="TABModel.worker_task">
+              <MappingFragment StoreEntitySet="worker_task">
+                <ScalarProperty Name="id_worker_task" ColumnName="id_worker_task" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id_worker" ColumnName="id_worker" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="dt_open" ColumnName="dt_open" />
+                <ScalarProperty Name="id_issue" ColumnName="id_issue" />
+                <ScalarProperty Name="dt_final_cancel" ColumnName="dt_final_cancel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
