@@ -28,5 +28,20 @@ namespace TABProject
             new AddTask().Show();
             //this.Hide();
         }
+
+        private void lRequest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bReturn_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
+
+        private void bAddNewTask_Click_1(object sender, EventArgs e)
+        {
+            new AddTask().Show();
+        }
     }
 }

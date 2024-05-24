@@ -54,14 +54,14 @@
             // 
             // tbemail
             // 
-            this.tbemail.Location = new System.Drawing.Point(58, 117);
+            this.tbemail.Location = new System.Drawing.Point(51, 108);
             this.tbemail.Name = "tbemail";
             this.tbemail.Size = new System.Drawing.Size(183, 22);
             this.tbemail.TabIndex = 22;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(58, 171);
+            this.tbPassword.Location = new System.Drawing.Point(51, 162);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(183, 22);
             this.tbPassword.TabIndex = 23;
@@ -69,14 +69,14 @@
             // comboBoxType
             // 
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(55, 233);
+            this.comboBoxType.Location = new System.Drawing.Point(48, 224);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(166, 24);
             this.comboBoxType.TabIndex = 24;
             // 
             // bAdd
             // 
-            this.bAdd.Location = new System.Drawing.Point(55, 273);
+            this.bAdd.Location = new System.Drawing.Point(48, 264);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(91, 33);
             this.bAdd.TabIndex = 25;
@@ -86,7 +86,7 @@
             // lAddNewUser
             // 
             this.lAddNewUser.AutoSize = true;
-            this.lAddNewUser.Location = new System.Drawing.Point(55, 56);
+            this.lAddNewUser.Location = new System.Drawing.Point(48, 47);
             this.lAddNewUser.Name = "lAddNewUser";
             this.lAddNewUser.Size = new System.Drawing.Size(91, 16);
             this.lAddNewUser.TabIndex = 26;
@@ -95,7 +95,7 @@
             // lEmail
             // 
             this.lEmail.AutoSize = true;
-            this.lEmail.Location = new System.Drawing.Point(55, 98);
+            this.lEmail.Location = new System.Drawing.Point(48, 89);
             this.lEmail.Name = "lEmail";
             this.lEmail.Size = new System.Drawing.Size(85, 16);
             this.lEmail.TabIndex = 27;
@@ -104,7 +104,7 @@
             // lPassword
             // 
             this.lPassword.AutoSize = true;
-            this.lPassword.Location = new System.Drawing.Point(55, 152);
+            this.lPassword.Location = new System.Drawing.Point(48, 143);
             this.lPassword.Name = "lPassword";
             this.lPassword.Size = new System.Drawing.Size(111, 16);
             this.lPassword.TabIndex = 28;
@@ -113,7 +113,7 @@
             // lType
             // 
             this.lType.AutoSize = true;
-            this.lType.Location = new System.Drawing.Point(55, 205);
+            this.lType.Location = new System.Drawing.Point(48, 196);
             this.lType.Name = "lType";
             this.lType.Size = new System.Drawing.Size(42, 16);
             this.lType.TabIndex = 29;
@@ -122,14 +122,14 @@
             // checkedListBoxUsers
             // 
             this.checkedListBoxUsers.FormattingEnabled = true;
-            this.checkedListBoxUsers.Location = new System.Drawing.Point(343, 88);
+            this.checkedListBoxUsers.Location = new System.Drawing.Point(349, 47);
             this.checkedListBoxUsers.Name = "checkedListBoxUsers";
-            this.checkedListBoxUsers.Size = new System.Drawing.Size(170, 259);
+            this.checkedListBoxUsers.Size = new System.Drawing.Size(249, 344);
             this.checkedListBoxUsers.TabIndex = 30;
             // 
             // bDelete
             // 
-            this.bDelete.Location = new System.Drawing.Point(343, 353);
+            this.bDelete.Location = new System.Drawing.Point(607, 349);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(101, 32);
             this.bDelete.TabIndex = 31;
@@ -139,7 +139,7 @@
             // lDelete
             // 
             this.lDelete.AutoSize = true;
-            this.lDelete.Location = new System.Drawing.Point(340, 56);
+            this.lDelete.Location = new System.Drawing.Point(606, 324);
             this.lDelete.Name = "lDelete";
             this.lDelete.Size = new System.Drawing.Size(86, 16);
             this.lDelete.TabIndex = 32;

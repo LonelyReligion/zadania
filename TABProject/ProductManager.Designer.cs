@@ -28,203 +28,176 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lResult = new System.Windows.Forms.Label();
-            this.lStatus = new System.Windows.Forms.Label();
-            this.lDescription = new System.Windows.Forms.Label();
-            this.lTaskProperities = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label = new System.Windows.Forms.Label();
+            this.tbRequestID = new System.Windows.Forms.TextBox();
+            this.lTasks = new System.Windows.Forms.Label();
+            this.lRequestName = new System.Windows.Forms.Label();
             this.bOK = new System.Windows.Forms.Button();
-            this.comboBoxWorkers = new System.Windows.Forms.ComboBox();
+            this.comboBoxWorker = new System.Windows.Forms.ComboBox();
             this.lChooseWorker = new System.Windows.Forms.Label();
-            this.comboBoxIssues = new System.Windows.Forms.ComboBox();
             this.bDeleteTask = new System.Windows.Forms.Button();
             this.bAddNewTask = new System.Windows.Forms.Button();
-            this.checkedListBoxTasks = new System.Windows.Forms.CheckedListBox();
             this.cbDelete = new System.Windows.Forms.CheckBox();
             this.cbDone = new System.Windows.Forms.CheckBox();
-            this.bLogOut = new System.Windows.Forms.Button();
+            this.bReturn = new System.Windows.Forms.Button();
             this.bSaveStatus = new System.Windows.Forms.Button();
-            this.lIssue = new System.Windows.Forms.Label();
-            this.lTasks = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lResult
+            // dataGridView1
             // 
-            this.lResult.AutoSize = true;
-            this.lResult.Location = new System.Drawing.Point(331, 237);
-            this.lResult.Name = "lResult";
-            this.lResult.Size = new System.Drawing.Size(51, 16);
-            this.lResult.TabIndex = 32;
-            this.lResult.Text = "Result: ";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(29, 161);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(547, 229);
+            this.dataGridView1.TabIndex = 37;
             // 
-            // lStatus
+            // label
             // 
-            this.lStatus.AutoSize = true;
-            this.lStatus.Location = new System.Drawing.Point(331, 208);
-            this.lStatus.Name = "lStatus";
-            this.lStatus.Size = new System.Drawing.Size(47, 16);
-            this.lStatus.TabIndex = 31;
-            this.lStatus.Text = "Status:";
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(227, 34);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(130, 16);
+            this.label.TabIndex = 36;
+            this.label.Text = "Choose issue status:";
             // 
-            // lDescription
+            // tbRequestID
             // 
-            this.lDescription.AutoSize = true;
-            this.lDescription.Location = new System.Drawing.Point(331, 181);
-            this.lDescription.Name = "lDescription";
-            this.lDescription.Size = new System.Drawing.Size(81, 16);
-            this.lDescription.TabIndex = 30;
-            this.lDescription.Text = "Description: ";
+            this.tbRequestID.Location = new System.Drawing.Point(29, 58);
+            this.tbRequestID.Multiline = true;
+            this.tbRequestID.Name = "tbRequestID";
+            this.tbRequestID.ReadOnly = true;
+            this.tbRequestID.Size = new System.Drawing.Size(175, 48);
+            this.tbRequestID.TabIndex = 35;
             // 
-            // lTaskProperities
+            // lTasks
             // 
-            this.lTaskProperities.AutoSize = true;
-            this.lTaskProperities.Location = new System.Drawing.Point(331, 143);
-            this.lTaskProperities.Name = "lTaskProperities";
-            this.lTaskProperities.Size = new System.Drawing.Size(109, 16);
-            this.lTaskProperities.TabIndex = 29;
-            this.lTaskProperities.Text = "Task Properities:";
+            this.lTasks.AutoSize = true;
+            this.lTasks.Location = new System.Drawing.Point(28, 139);
+            this.lTasks.Name = "lTasks";
+            this.lTasks.Size = new System.Drawing.Size(137, 16);
+            this.lTasks.TabIndex = 34;
+            this.lTasks.Text = "Tasks for this request:";
+            // 
+            // lRequestName
+            // 
+            this.lRequestName.AutoSize = true;
+            this.lRequestName.Location = new System.Drawing.Point(28, 34);
+            this.lRequestName.Name = "lRequestName";
+            this.lRequestName.Size = new System.Drawing.Size(49, 16);
+            this.lRequestName.TabIndex = 33;
+            this.lRequestName.Text = "Issues:";
+            this.lRequestName.Click += new System.EventHandler(this.lRequest_Click);
             // 
             // bOK
             // 
-            this.bOK.Location = new System.Drawing.Point(545, 314);
+            this.bOK.Location = new System.Drawing.Point(585, 366);
             this.bOK.Name = "bOK";
-            this.bOK.Size = new System.Drawing.Size(83, 24);
-            this.bOK.TabIndex = 28;
+            this.bOK.Size = new System.Drawing.Size(75, 23);
+            this.bOK.TabIndex = 32;
             this.bOK.Text = "OK";
             this.bOK.UseVisualStyleBackColor = true;
             // 
-            // comboBoxWorkers
+            // comboBoxWorker
             // 
-            this.comboBoxWorkers.FormattingEnabled = true;
-            this.comboBoxWorkers.Location = new System.Drawing.Point(331, 315);
-            this.comboBoxWorkers.Name = "comboBoxWorkers";
-            this.comboBoxWorkers.Size = new System.Drawing.Size(208, 24);
-            this.comboBoxWorkers.TabIndex = 27;
+            this.comboBoxWorker.FormattingEnabled = true;
+            this.comboBoxWorker.Location = new System.Drawing.Point(585, 336);
+            this.comboBoxWorker.Name = "comboBoxWorker";
+            this.comboBoxWorker.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxWorker.TabIndex = 31;
             // 
             // lChooseWorker
             // 
             this.lChooseWorker.AutoSize = true;
-            this.lChooseWorker.Location = new System.Drawing.Point(328, 296);
+            this.lChooseWorker.Location = new System.Drawing.Point(582, 316);
             this.lChooseWorker.Name = "lChooseWorker";
             this.lChooseWorker.Size = new System.Drawing.Size(104, 16);
-            this.lChooseWorker.TabIndex = 26;
+            this.lChooseWorker.TabIndex = 30;
             this.lChooseWorker.Text = "Choose Worker:";
-            // 
-            // comboBoxIssues
-            // 
-            this.comboBoxIssues.FormattingEnabled = true;
-            this.comboBoxIssues.Location = new System.Drawing.Point(31, 54);
-            this.comboBoxIssues.Name = "comboBoxIssues";
-            this.comboBoxIssues.Size = new System.Drawing.Size(253, 24);
-            this.comboBoxIssues.TabIndex = 25;
             // 
             // bDeleteTask
             // 
-            this.bDeleteTask.Location = new System.Drawing.Point(31, 391);
+            this.bDeleteTask.Location = new System.Drawing.Point(31, 397);
             this.bDeleteTask.Name = "bDeleteTask";
-            this.bDeleteTask.Size = new System.Drawing.Size(137, 32);
-            this.bDeleteTask.TabIndex = 24;
+            this.bDeleteTask.Size = new System.Drawing.Size(101, 32);
+            this.bDeleteTask.TabIndex = 29;
             this.bDeleteTask.Text = "Delete task";
             this.bDeleteTask.UseVisualStyleBackColor = true;
             // 
             // bAddNewTask
             // 
-            this.bAddNewTask.Location = new System.Drawing.Point(31, 354);
+            this.bAddNewTask.Location = new System.Drawing.Point(138, 398);
             this.bAddNewTask.Name = "bAddNewTask";
-            this.bAddNewTask.Size = new System.Drawing.Size(137, 31);
-            this.bAddNewTask.TabIndex = 23;
+            this.bAddNewTask.Size = new System.Drawing.Size(105, 31);
+            this.bAddNewTask.TabIndex = 28;
             this.bAddNewTask.Text = "Add new task";
             this.bAddNewTask.UseVisualStyleBackColor = true;
-            this.bAddNewTask.Click += new System.EventHandler(this.bAddNewTask_Click);
-            // 
-            // checkedListBoxTasks
-            // 
-            this.checkedListBoxTasks.FormattingEnabled = true;
-            this.checkedListBoxTasks.Location = new System.Drawing.Point(31, 114);
-            this.checkedListBoxTasks.Name = "checkedListBoxTasks";
-            this.checkedListBoxTasks.Size = new System.Drawing.Size(221, 225);
-            this.checkedListBoxTasks.TabIndex = 22;
+            this.bAddNewTask.Click += new System.EventHandler(this.bAddNewTask_Click_1);
             // 
             // cbDelete
             // 
             this.cbDelete.AutoSize = true;
-            this.cbDelete.Location = new System.Drawing.Point(331, 68);
+            this.cbDelete.Location = new System.Drawing.Point(230, 86);
             this.cbDelete.Name = "cbDelete";
             this.cbDelete.Size = new System.Drawing.Size(69, 20);
-            this.cbDelete.TabIndex = 21;
+            this.cbDelete.TabIndex = 27;
             this.cbDelete.Text = "Delete";
             this.cbDelete.UseVisualStyleBackColor = true;
             // 
             // cbDone
             // 
             this.cbDone.AutoSize = true;
-            this.cbDone.Location = new System.Drawing.Point(331, 42);
+            this.cbDone.Location = new System.Drawing.Point(230, 60);
             this.cbDone.Name = "cbDone";
             this.cbDone.Size = new System.Drawing.Size(62, 20);
-            this.cbDone.TabIndex = 20;
+            this.cbDone.TabIndex = 26;
             this.cbDone.Text = "Done";
             this.cbDone.UseVisualStyleBackColor = true;
             // 
-            // bLogOut
+            // bReturn
             // 
-            this.bLogOut.Location = new System.Drawing.Point(678, 12);
-            this.bLogOut.Name = "bLogOut";
-            this.bLogOut.Size = new System.Drawing.Size(110, 50);
-            this.bLogOut.TabIndex = 19;
-            this.bLogOut.Text = "Log out";
-            this.bLogOut.UseVisualStyleBackColor = true;
-            this.bLogOut.Click += new System.EventHandler(this.bLogOut_Click);
+            this.bReturn.Location = new System.Drawing.Point(664, 22);
+            this.bReturn.Name = "bReturn";
+            this.bReturn.Size = new System.Drawing.Size(109, 51);
+            this.bReturn.TabIndex = 25;
+            this.bReturn.Text = "Return";
+            this.bReturn.UseVisualStyleBackColor = true;
+            this.bReturn.Click += new System.EventHandler(this.bReturn_Click);
             // 
             // bSaveStatus
             // 
-            this.bSaveStatus.Location = new System.Drawing.Point(406, 42);
+            this.bSaveStatus.Location = new System.Drawing.Point(305, 60);
             this.bSaveStatus.Name = "bSaveStatus";
-            this.bSaveStatus.Size = new System.Drawing.Size(106, 46);
-            this.bSaveStatus.TabIndex = 18;
-            this.bSaveStatus.Text = "Save status";
+            this.bSaveStatus.Size = new System.Drawing.Size(136, 46);
+            this.bSaveStatus.TabIndex = 24;
+            this.bSaveStatus.Text = "Save issue status";
             this.bSaveStatus.UseVisualStyleBackColor = true;
-            // 
-            // lIssue
-            // 
-            this.lIssue.AutoSize = true;
-            this.lIssue.Location = new System.Drawing.Point(28, 35);
-            this.lIssue.Name = "lIssue";
-            this.lIssue.Size = new System.Drawing.Size(42, 16);
-            this.lIssue.TabIndex = 33;
-            this.lIssue.Text = "Issue:";
-            // 
-            // lTasks
-            // 
-            this.lTasks.AutoSize = true;
-            this.lTasks.Location = new System.Drawing.Point(28, 95);
-            this.lTasks.Name = "lTasks";
-            this.lTasks.Size = new System.Drawing.Size(48, 16);
-            this.lTasks.TabIndex = 34;
-            this.lTasks.Text = "Tasks:";
             // 
             // ProductManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.tbRequestID);
             this.Controls.Add(this.lTasks);
-            this.Controls.Add(this.lIssue);
-            this.Controls.Add(this.lResult);
-            this.Controls.Add(this.lStatus);
-            this.Controls.Add(this.lDescription);
-            this.Controls.Add(this.lTaskProperities);
+            this.Controls.Add(this.lRequestName);
             this.Controls.Add(this.bOK);
-            this.Controls.Add(this.comboBoxWorkers);
+            this.Controls.Add(this.comboBoxWorker);
             this.Controls.Add(this.lChooseWorker);
-            this.Controls.Add(this.comboBoxIssues);
             this.Controls.Add(this.bDeleteTask);
             this.Controls.Add(this.bAddNewTask);
-            this.Controls.Add(this.checkedListBoxTasks);
             this.Controls.Add(this.cbDelete);
             this.Controls.Add(this.cbDone);
-            this.Controls.Add(this.bLogOut);
+            this.Controls.Add(this.bReturn);
             this.Controls.Add(this.bSaveStatus);
             this.Name = "ProductManager";
-            this.Text = "Task Management System - Product Manager Console";
+            this.Text = "Task Management System - Issues Details";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,22 +205,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lResult;
-        private System.Windows.Forms.Label lStatus;
-        private System.Windows.Forms.Label lDescription;
-        private System.Windows.Forms.Label lTaskProperities;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TextBox tbRequestID;
+        private System.Windows.Forms.Label lTasks;
+        private System.Windows.Forms.Label lRequestName;
         private System.Windows.Forms.Button bOK;
-        private System.Windows.Forms.ComboBox comboBoxWorkers;
+        private System.Windows.Forms.ComboBox comboBoxWorker;
         private System.Windows.Forms.Label lChooseWorker;
-        private System.Windows.Forms.ComboBox comboBoxIssues;
         private System.Windows.Forms.Button bDeleteTask;
         private System.Windows.Forms.Button bAddNewTask;
-        private System.Windows.Forms.CheckedListBox checkedListBoxTasks;
         private System.Windows.Forms.CheckBox cbDelete;
         private System.Windows.Forms.CheckBox cbDone;
-        private System.Windows.Forms.Button bLogOut;
+        private System.Windows.Forms.Button bReturn;
         private System.Windows.Forms.Button bSaveStatus;
-        private System.Windows.Forms.Label lIssue;
-        private System.Windows.Forms.Label lTasks;
     }
 }

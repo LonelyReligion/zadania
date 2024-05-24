@@ -20,6 +20,7 @@ namespace TABProject
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             //AGA 
             using (var db = new TABContext())
             {
@@ -36,12 +37,13 @@ namespace TABProject
                         Console.WriteLine("Correct password!");
                         if (correct_login.type.Trim().ToLower().Equals("ACCManager".ToLower()))
                         {
-                            new ACCManager().Show();
+                            //new ACCManager().Show();
+                            new ACCRequestList().Show();
                             this.Hide();
                         }
-                        else if (correct_login.type.Trim().ToLower().Equals("ProductManager".ToLower()))
+                        else if (correct_login.type.Trim().ToLower().Equals("ProductMan".ToLower()))
                         {
-                            new ProductManager().Show();
+                            new ProductIssuesList().Show();
                             this.Hide();
                         }
                         else if (correct_login.type.Trim().ToLower().Equals("Worker".ToLower())) {
@@ -56,10 +58,12 @@ namespace TABProject
                     }
                     else
                     {
+                        lLoginResults.Text = "Wrong password!";
                         Console.WriteLine("Wrong password " + tbPassword.Text + "+" + correct_login.password + " " + correct_password);
                     }
                 }
                 else {
+                    lLoginResults.Text = "Wrong login!";
                     Console.WriteLine("Wrong login\n");
                 }
             }
@@ -95,6 +99,18 @@ namespace TABProject
             if (e.KeyCode == Keys.Enter) {
                 button1_Click(sender, e);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void LoginView_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'tABDataSet.app_user' table. You can move, or remove it, as needed.
+            this.app_userTableAdapter.Fill(this.tABDataSet.app_user);
+
         }
     }
 }

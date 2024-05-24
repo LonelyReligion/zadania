@@ -12,8 +12,15 @@ namespace TABProject
 {
     public partial class ACCManager : Form
     {
+        decimal id;
         public ACCManager()
         {
+            InitializeComponent();
+        }
+
+        public ACCManager(decimal id_Request): base()
+        {
+            this.id = id_Request;
             InitializeComponent();
         }
 
@@ -23,9 +30,13 @@ namespace TABProject
             //this.Hide();
         }
 
-        private void bLogOut_Click(object sender, EventArgs e)
+        private void ACCManager_Load(object sender, EventArgs e)
         {
-            new LoginView().Show();
+            tbRequestID.Text = this.id.ToString();
+        }
+
+        private void bReturn_Click(object sender, EventArgs e)
+        {
             this.Hide();
         }
     }
