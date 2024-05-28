@@ -22,5 +22,10 @@ namespace TABProject
             new LoginView().Show();
             this.Hide();
         }
+
+        private void lEmail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

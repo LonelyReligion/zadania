@@ -47,7 +47,7 @@ namespace TABProject
                             this.Hide();
                         }
                         else if (correct_login.type.Trim().ToLower().Equals("Worker".ToLower())) {
-                            new Worker().Show();
+                            new Worker(correct_login.id_app_user).Show();
                             this.Hide();
                         }
                         else if (correct_login.type.Trim().ToLower().Equals("Admin".ToLower()))
@@ -110,6 +110,11 @@ namespace TABProject
         {
             // TODO: This line of code loads data into the 'tABDataSet.app_user' table. You can move, or remove it, as needed.
             this.app_userTableAdapter.Fill(this.tABDataSet.app_user);
+
+        }
+
+        private void lEmail_Click(object sender, EventArgs e)
+        {
 
         }
     }
