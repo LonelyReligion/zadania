@@ -39,5 +39,16 @@ namespace TABProject
         {
             this.Hide();
         }
+
+        private void tbResult_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bEdit_Click(object sender, EventArgs e)
+        {
+            new EditIssue().Show();
+            //this.Hide();
+        }
     }
 }

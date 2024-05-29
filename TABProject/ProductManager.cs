@@ -43,5 +43,11 @@ namespace TABProject
         {
             new AddTask().Show();
         }
+
+        private void bEditTask_Click(object sender, EventArgs e)
+        {
+            new EditTask().Show();
+            //this.Hide();
+        }
     }
 }

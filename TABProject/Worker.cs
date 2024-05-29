@@ -12,8 +12,10 @@ namespace TABProject
 {
     public partial class Worker : Form
     {
-        public Worker()
+        decimal worker_id;
+        public Worker(decimal worker_id)
         {
+            this.worker_id = worker_id;
             InitializeComponent();
         }
 
@@ -23,11 +25,20 @@ namespace TABProject
             this.Hide();
         }
 
+        private void dane()
+        {
+            using (var db = new TABContext())
+            {
+                var tasks = db.worker_task
+                   .Where(b => b.id_worker == worker_id);
+                    dataGridView1.DataSource = tasks.ToList();
+            }
+        }
         private void Worker_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'tABDataSet3.worker_task' table. You can move, or remove it, as needed.
-            this.worker_taskTableAdapter.Fill(this.tABDataSet3.worker_task);
-
+            //this.worker_taskTableAdapter.Fill(this.tABDataSet3.worker_task);
+            dane();
         }
     }
 }

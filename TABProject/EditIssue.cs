@@ -10,25 +10,19 @@ using System.Windows.Forms;
 
 namespace TABProject
 {
-    public partial class AdminView : Form
+    public partial class EditIssue : Form
     {
-        public AdminView()
+        public EditIssue()
         {
             InitializeComponent();
         }
 
-        private void bLogOut_Click(object sender, EventArgs e)
+        private void bReturn_Click(object sender, EventArgs e)
         {
-            new LoginView().Show();
             this.Hide();
         }
 
-        private void lEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bDelete_Click(object sender, EventArgs e)
+        private void EditIssue_Load(object sender, EventArgs e)
         {
 
         }

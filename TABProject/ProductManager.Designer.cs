@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label = new System.Windows.Forms.Label();
             this.tbRequestID = new System.Windows.Forms.TextBox();
             this.lTasks = new System.Windows.Forms.Label();
             this.lRequestName = new System.Windows.Forms.Label();
-            this.bOK = new System.Windows.Forms.Button();
-            this.comboBoxWorker = new System.Windows.Forms.ComboBox();
-            this.lChooseWorker = new System.Windows.Forms.Label();
             this.bDeleteTask = new System.Windows.Forms.Button();
             this.bAddNewTask = new System.Windows.Forms.Button();
-            this.cbDelete = new System.Windows.Forms.CheckBox();
-            this.cbDone = new System.Windows.Forms.CheckBox();
             this.bReturn = new System.Windows.Forms.Button();
-            this.bSaveStatus = new System.Windows.Forms.Button();
+            this.lResult = new System.Windows.Forms.Label();
+            this.tbResult = new System.Windows.Forms.TextBox();
+            this.cbInProgress = new System.Windows.Forms.CheckBox();
+            this.cbFinal = new System.Windows.Forms.CheckBox();
+            this.lTaskStatus = new System.Windows.Forms.Label();
+            this.cbCancel = new System.Windows.Forms.CheckBox();
+            this.bSave = new System.Windows.Forms.Button();
+            this.bEditTask = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,25 +53,16 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(547, 229);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 229);
             this.dataGridView1.TabIndex = 37;
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(227, 34);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(130, 16);
-            this.label.TabIndex = 36;
-            this.label.Text = "Choose issue status:";
             // 
             // tbRequestID
             // 
-            this.tbRequestID.Location = new System.Drawing.Point(29, 58);
+            this.tbRequestID.Location = new System.Drawing.Point(29, 48);
             this.tbRequestID.Multiline = true;
             this.tbRequestID.Name = "tbRequestID";
             this.tbRequestID.ReadOnly = true;
-            this.tbRequestID.Size = new System.Drawing.Size(175, 48);
+            this.tbRequestID.Size = new System.Drawing.Size(279, 71);
             this.tbRequestID.TabIndex = 35;
             // 
             // lTasks
@@ -85,42 +77,16 @@
             // lRequestName
             // 
             this.lRequestName.AutoSize = true;
-            this.lRequestName.Location = new System.Drawing.Point(28, 34);
+            this.lRequestName.Location = new System.Drawing.Point(28, 24);
             this.lRequestName.Name = "lRequestName";
             this.lRequestName.Size = new System.Drawing.Size(49, 16);
             this.lRequestName.TabIndex = 33;
             this.lRequestName.Text = "Issues:";
             this.lRequestName.Click += new System.EventHandler(this.lRequest_Click);
             // 
-            // bOK
-            // 
-            this.bOK.Location = new System.Drawing.Point(585, 366);
-            this.bOK.Name = "bOK";
-            this.bOK.Size = new System.Drawing.Size(75, 23);
-            this.bOK.TabIndex = 32;
-            this.bOK.Text = "OK";
-            this.bOK.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxWorker
-            // 
-            this.comboBoxWorker.FormattingEnabled = true;
-            this.comboBoxWorker.Location = new System.Drawing.Point(585, 336);
-            this.comboBoxWorker.Name = "comboBoxWorker";
-            this.comboBoxWorker.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxWorker.TabIndex = 31;
-            // 
-            // lChooseWorker
-            // 
-            this.lChooseWorker.AutoSize = true;
-            this.lChooseWorker.Location = new System.Drawing.Point(582, 316);
-            this.lChooseWorker.Name = "lChooseWorker";
-            this.lChooseWorker.Size = new System.Drawing.Size(104, 16);
-            this.lChooseWorker.TabIndex = 30;
-            this.lChooseWorker.Text = "Choose Worker:";
-            // 
             // bDeleteTask
             // 
-            this.bDeleteTask.Location = new System.Drawing.Point(31, 397);
+            this.bDeleteTask.Location = new System.Drawing.Point(249, 398);
             this.bDeleteTask.Name = "bDeleteTask";
             this.bDeleteTask.Size = new System.Drawing.Size(101, 32);
             this.bDeleteTask.TabIndex = 29;
@@ -137,29 +103,9 @@
             this.bAddNewTask.UseVisualStyleBackColor = true;
             this.bAddNewTask.Click += new System.EventHandler(this.bAddNewTask_Click_1);
             // 
-            // cbDelete
-            // 
-            this.cbDelete.AutoSize = true;
-            this.cbDelete.Location = new System.Drawing.Point(230, 86);
-            this.cbDelete.Name = "cbDelete";
-            this.cbDelete.Size = new System.Drawing.Size(69, 20);
-            this.cbDelete.TabIndex = 27;
-            this.cbDelete.Text = "Delete";
-            this.cbDelete.UseVisualStyleBackColor = true;
-            // 
-            // cbDone
-            // 
-            this.cbDone.AutoSize = true;
-            this.cbDone.Location = new System.Drawing.Point(230, 60);
-            this.cbDone.Name = "cbDone";
-            this.cbDone.Size = new System.Drawing.Size(62, 20);
-            this.cbDone.TabIndex = 26;
-            this.cbDone.Text = "Done";
-            this.cbDone.UseVisualStyleBackColor = true;
-            // 
             // bReturn
             // 
-            this.bReturn.Location = new System.Drawing.Point(664, 22);
+            this.bReturn.Location = new System.Drawing.Point(749, 19);
             this.bReturn.Name = "bReturn";
             this.bReturn.Size = new System.Drawing.Size(109, 51);
             this.bReturn.TabIndex = 25;
@@ -167,34 +113,101 @@
             this.bReturn.UseVisualStyleBackColor = true;
             this.bReturn.Click += new System.EventHandler(this.bReturn_Click);
             // 
-            // bSaveStatus
+            // lResult
             // 
-            this.bSaveStatus.Location = new System.Drawing.Point(305, 60);
-            this.bSaveStatus.Name = "bSaveStatus";
-            this.bSaveStatus.Size = new System.Drawing.Size(136, 46);
-            this.bSaveStatus.TabIndex = 24;
-            this.bSaveStatus.Text = "Save issue status";
-            this.bSaveStatus.UseVisualStyleBackColor = true;
+            this.lResult.AutoSize = true;
+            this.lResult.Location = new System.Drawing.Point(462, 24);
+            this.lResult.Name = "lResult";
+            this.lResult.Size = new System.Drawing.Size(48, 16);
+            this.lResult.TabIndex = 45;
+            this.lResult.Text = "Result:";
+            // 
+            // tbResult
+            // 
+            this.tbResult.Location = new System.Drawing.Point(465, 48);
+            this.tbResult.Multiline = true;
+            this.tbResult.Name = "tbResult";
+            this.tbResult.Size = new System.Drawing.Size(257, 81);
+            this.tbResult.TabIndex = 44;
+            // 
+            // cbInProgress
+            // 
+            this.cbInProgress.AutoSize = true;
+            this.cbInProgress.Location = new System.Drawing.Point(342, 50);
+            this.cbInProgress.Name = "cbInProgress";
+            this.cbInProgress.Size = new System.Drawing.Size(96, 20);
+            this.cbInProgress.TabIndex = 43;
+            this.cbInProgress.Text = "In progress";
+            this.cbInProgress.UseVisualStyleBackColor = true;
+            // 
+            // cbFinal
+            // 
+            this.cbFinal.AutoSize = true;
+            this.cbFinal.Location = new System.Drawing.Point(342, 102);
+            this.cbFinal.Name = "cbFinal";
+            this.cbFinal.Size = new System.Drawing.Size(58, 20);
+            this.cbFinal.TabIndex = 42;
+            this.cbFinal.Text = "Final";
+            this.cbFinal.UseVisualStyleBackColor = true;
+            // 
+            // lTaskStatus
+            // 
+            this.lTaskStatus.AutoSize = true;
+            this.lTaskStatus.Location = new System.Drawing.Point(339, 24);
+            this.lTaskStatus.Name = "lTaskStatus";
+            this.lTaskStatus.Size = new System.Drawing.Size(79, 16);
+            this.lTaskStatus.TabIndex = 41;
+            this.lTaskStatus.Text = "Task status:";
+            // 
+            // cbCancel
+            // 
+            this.cbCancel.AutoSize = true;
+            this.cbCancel.Location = new System.Drawing.Point(342, 76);
+            this.cbCancel.Name = "cbCancel";
+            this.cbCancel.Size = new System.Drawing.Size(71, 20);
+            this.cbCancel.TabIndex = 40;
+            this.cbCancel.Text = "Cancel";
+            this.cbCancel.UseVisualStyleBackColor = true;
+            // 
+            // bSave
+            // 
+            this.bSave.Location = new System.Drawing.Point(749, 76);
+            this.bSave.Name = "bSave";
+            this.bSave.Size = new System.Drawing.Size(110, 56);
+            this.bSave.TabIndex = 38;
+            this.bSave.Text = "Save request";
+            this.bSave.UseVisualStyleBackColor = true;
+            // 
+            // bEditTask
+            // 
+            this.bEditTask.Location = new System.Drawing.Point(27, 398);
+            this.bEditTask.Name = "bEditTask";
+            this.bEditTask.Size = new System.Drawing.Size(105, 31);
+            this.bEditTask.TabIndex = 46;
+            this.bEditTask.Text = "Edit task";
+            this.bEditTask.UseVisualStyleBackColor = true;
+            this.bEditTask.Click += new System.EventHandler(this.bEditTask_Click);
             // 
             // ProductManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(876, 450);
+            this.Controls.Add(this.bEditTask);
+            this.Controls.Add(this.lResult);
+            this.Controls.Add(this.tbResult);
+            this.Controls.Add(this.cbInProgress);
+            this.Controls.Add(this.cbFinal);
+            this.Controls.Add(this.lTaskStatus);
+            this.Controls.Add(this.cbCancel);
+            this.Controls.Add(this.bSave);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label);
             this.Controls.Add(this.tbRequestID);
             this.Controls.Add(this.lTasks);
             this.Controls.Add(this.lRequestName);
-            this.Controls.Add(this.bOK);
-            this.Controls.Add(this.comboBoxWorker);
-            this.Controls.Add(this.lChooseWorker);
             this.Controls.Add(this.bDeleteTask);
             this.Controls.Add(this.bAddNewTask);
-            this.Controls.Add(this.cbDelete);
-            this.Controls.Add(this.cbDone);
             this.Controls.Add(this.bReturn);
-            this.Controls.Add(this.bSaveStatus);
             this.Name = "ProductManager";
             this.Text = "Task Management System - Issues Details";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -206,18 +219,19 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox tbRequestID;
         private System.Windows.Forms.Label lTasks;
         private System.Windows.Forms.Label lRequestName;
-        private System.Windows.Forms.Button bOK;
-        private System.Windows.Forms.ComboBox comboBoxWorker;
-        private System.Windows.Forms.Label lChooseWorker;
         private System.Windows.Forms.Button bDeleteTask;
         private System.Windows.Forms.Button bAddNewTask;
-        private System.Windows.Forms.CheckBox cbDelete;
-        private System.Windows.Forms.CheckBox cbDone;
         private System.Windows.Forms.Button bReturn;
-        private System.Windows.Forms.Button bSaveStatus;
+        private System.Windows.Forms.Label lResult;
+        private System.Windows.Forms.TextBox tbResult;
+        private System.Windows.Forms.CheckBox cbInProgress;
+        private System.Windows.Forms.CheckBox cbFinal;
+        private System.Windows.Forms.Label lTaskStatus;
+        private System.Windows.Forms.CheckBox cbCancel;
+        private System.Windows.Forms.Button bSave;
+        private System.Windows.Forms.Button bEditTask;
     }
 }

@@ -45,6 +45,7 @@
             // bLogin
             // 
             this.bLogin.Location = new System.Drawing.Point(341, 251);
+            this.bLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bLogin.Name = "bLogin";
             this.bLogin.Size = new System.Drawing.Size(87, 34);
             this.bLogin.TabIndex = 0;
@@ -55,6 +56,7 @@
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(292, 149);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(191, 22);
             this.tbEmail.TabIndex = 1;
@@ -72,6 +74,7 @@
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(292, 213);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(191, 22);
@@ -82,14 +85,15 @@
             this.lEmail.AutoSize = true;
             this.lEmail.Location = new System.Drawing.Point(289, 119);
             this.lEmail.Name = "lEmail";
-            this.lEmail.Size = new System.Drawing.Size(44, 16);
+            this.lEmail.Size = new System.Drawing.Size(43, 16);
             this.lEmail.TabIndex = 3;
-            this.lEmail.Text = "Email:";
+            this.lEmail.Text = "Login:";
+            this.lEmail.Click += new System.EventHandler(this.lEmail_Click);
             // 
             // lPassword
             // 
             this.lPassword.AutoSize = true;
-            this.lPassword.Location = new System.Drawing.Point(289, 184);
+            this.lPassword.Location = new System.Drawing.Point(289, 185);
             this.lPassword.Name = "lPassword";
             this.lPassword.Size = new System.Drawing.Size(70, 16);
             this.lPassword.TabIndex = 4;
@@ -99,7 +103,7 @@
             // 
             this.lLoginResults.AutoSize = true;
             this.lLoginResults.ForeColor = System.Drawing.Color.Firebrick;
-            this.lLoginResults.Location = new System.Drawing.Point(438, 261);
+            this.lLoginResults.Location = new System.Drawing.Point(303, 301);
             this.lLoginResults.Name = "lLoginResults";
             this.lLoginResults.Size = new System.Drawing.Size(0, 16);
             this.lLoginResults.TabIndex = 5;
@@ -120,6 +124,7 @@
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.bLogin);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginView";
             this.Text = "Task Management System - Sign in";
             this.Load += new System.EventHandler(this.LoginView_Load);
