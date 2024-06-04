@@ -60,10 +60,10 @@
             // 
             // bLogOut
             // 
-            this.bLogOut.Location = new System.Drawing.Point(672, 11);
-            this.bLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bLogOut.Location = new System.Drawing.Point(504, 9);
+            this.bLogOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bLogOut.Name = "bLogOut";
-            this.bLogOut.Size = new System.Drawing.Size(107, 47);
+            this.bLogOut.Size = new System.Drawing.Size(80, 38);
             this.bLogOut.TabIndex = 20;
             this.bLogOut.Text = "Log out";
             this.bLogOut.UseVisualStyleBackColor = true;
@@ -71,13 +71,14 @@
             // 
             // bSave
             // 
-            this.bSave.Location = new System.Drawing.Point(629, 373);
-            this.bSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bSave.Location = new System.Drawing.Point(472, 303);
+            this.bSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bSave.Name = "bSave";
-            this.bSave.Size = new System.Drawing.Size(107, 46);
+            this.bSave.Size = new System.Drawing.Size(80, 37);
             this.bSave.TabIndex = 26;
             this.bSave.Text = "Save";
             this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
             // dataGridView1
             // 
@@ -95,13 +96,14 @@
             this.idissueDataGridViewTextBoxColumn,
             this.dtfinalcancelDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.workertaskBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(32, 88);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 72);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(585, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(439, 269);
             this.dataGridView1.TabIndex = 28;
             // 
             // idworkertaskDataGridViewTextBoxColumn
@@ -193,105 +195,114 @@
             // lRegistrationDate
             // 
             this.lRegistrationDate.AutoSize = true;
-            this.lRegistrationDate.Location = new System.Drawing.Point(32, 23);
+            this.lRegistrationDate.Location = new System.Drawing.Point(24, 19);
+            this.lRegistrationDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lRegistrationDate.Name = "lRegistrationDate";
-            this.lRegistrationDate.Size = new System.Drawing.Size(112, 16);
+            this.lRegistrationDate.Size = new System.Drawing.Size(90, 13);
             this.lRegistrationDate.TabIndex = 30;
             this.lRegistrationDate.Text = "Registration date:";
             // 
             // dataTime
             // 
-            this.dataTime.Location = new System.Drawing.Point(32, 50);
-            this.dataTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataTime.Location = new System.Drawing.Point(24, 41);
+            this.dataTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataTime.Name = "dataTime";
             this.dataTime.ShowCheckBox = true;
-            this.dataTime.Size = new System.Drawing.Size(200, 22);
+            this.dataTime.Size = new System.Drawing.Size(151, 20);
             this.dataTime.TabIndex = 29;
             // 
             // cbFinal
             // 
             this.cbFinal.AutoSize = true;
-            this.cbFinal.Location = new System.Drawing.Point(629, 136);
-            this.cbFinal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFinal.Location = new System.Drawing.Point(472, 110);
+            this.cbFinal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbFinal.Name = "cbFinal";
-            this.cbFinal.Size = new System.Drawing.Size(58, 20);
+            this.cbFinal.Size = new System.Drawing.Size(48, 17);
             this.cbFinal.TabIndex = 31;
             this.cbFinal.Text = "Final";
             this.cbFinal.UseVisualStyleBackColor = true;
+            this.cbFinal.CheckedChanged += new System.EventHandler(this.cbFinal_CheckedChanged);
             // 
             // cbInProgress
             // 
             this.cbInProgress.AutoSize = true;
-            this.cbInProgress.Location = new System.Drawing.Point(629, 112);
-            this.cbInProgress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbInProgress.Location = new System.Drawing.Point(472, 91);
+            this.cbInProgress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbInProgress.Name = "cbInProgress";
-            this.cbInProgress.Size = new System.Drawing.Size(96, 20);
+            this.cbInProgress.Size = new System.Drawing.Size(78, 17);
             this.cbInProgress.TabIndex = 32;
             this.cbInProgress.Text = "In progress";
             this.cbInProgress.UseVisualStyleBackColor = true;
+            this.cbInProgress.CheckedChanged += new System.EventHandler(this.cbInProgress_CheckedChanged);
             // 
             // cbCancel
             // 
             this.cbCancel.AutoSize = true;
-            this.cbCancel.Location = new System.Drawing.Point(629, 160);
-            this.cbCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbCancel.Location = new System.Drawing.Point(472, 130);
+            this.cbCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbCancel.Name = "cbCancel";
-            this.cbCancel.Size = new System.Drawing.Size(71, 20);
+            this.cbCancel.Size = new System.Drawing.Size(59, 17);
             this.cbCancel.TabIndex = 33;
             this.cbCancel.Text = "Cancel";
             this.cbCancel.UseVisualStyleBackColor = true;
+            this.cbCancel.CheckedChanged += new System.EventHandler(this.cbCancel_CheckedChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(629, 210);
+            this.textBox1.Location = new System.Drawing.Point(472, 171);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 156);
+            this.textBox1.Size = new System.Drawing.Size(114, 128);
             this.textBox1.TabIndex = 34;
             // 
             // lResult
             // 
             this.lResult.AutoSize = true;
-            this.lResult.Location = new System.Drawing.Point(625, 191);
+            this.lResult.Location = new System.Drawing.Point(469, 155);
+            this.lResult.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lResult.Name = "lResult";
-            this.lResult.Size = new System.Drawing.Size(48, 16);
+            this.lResult.Size = new System.Drawing.Size(40, 13);
             this.lResult.TabIndex = 35;
             this.lResult.Text = "Result:";
             // 
             // lStatus
             // 
             this.lStatus.AutoSize = true;
-            this.lStatus.Location = new System.Drawing.Point(626, 88);
+            this.lStatus.Location = new System.Drawing.Point(470, 72);
+            this.lStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lStatus.Name = "lStatus";
-            this.lStatus.Size = new System.Drawing.Size(47, 16);
+            this.lStatus.Size = new System.Drawing.Size(40, 13);
             this.lStatus.TabIndex = 36;
             this.lStatus.Text = "Status:";
             // 
             // cbMine
             // 
             this.cbMine.AutoSize = true;
-            this.cbMine.Location = new System.Drawing.Point(254, 52);
-            this.cbMine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMine.Location = new System.Drawing.Point(190, 42);
+            this.cbMine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbMine.Name = "cbMine";
-            this.cbMine.Size = new System.Drawing.Size(58, 20);
+            this.cbMine.Size = new System.Drawing.Size(49, 17);
             this.cbMine.TabIndex = 37;
             this.cbMine.Text = "Mine";
             this.cbMine.UseVisualStyleBackColor = true;
             // 
             // bSearch
             // 
-            this.bSearch.Location = new System.Drawing.Point(330, 45);
+            this.bSearch.Location = new System.Drawing.Point(248, 37);
+            this.bSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bSearch.Name = "bSearch";
-            this.bSearch.Size = new System.Drawing.Size(92, 33);
+            this.bSearch.Size = new System.Drawing.Size(69, 27);
             this.bSearch.TabIndex = 38;
             this.bSearch.Text = "Search";
             this.bSearch.UseVisualStyleBackColor = true;
+            this.bSearch.Click += new System.EventHandler(this.bSearch_Click);
             // 
             // Worker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 455);
+            this.ClientSize = new System.Drawing.Size(593, 370);
             this.Controls.Add(this.bSearch);
             this.Controls.Add(this.cbMine);
             this.Controls.Add(this.lStatus);
@@ -305,7 +316,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bSave);
             this.Controls.Add(this.bLogOut);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Worker";
             this.Text = "Task Management System - Worker Console";
             this.Load += new System.EventHandler(this.Worker_Load);

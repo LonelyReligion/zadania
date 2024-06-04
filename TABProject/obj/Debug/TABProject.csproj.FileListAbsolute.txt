@@ -336,3 +336,5 @@ C:\Users\kasia\OneDrive\Pulpit\TAB-github\TABDRA4\TABProject\obj\Debug\TABProjec
 C:\Users\kasia\OneDrive\Pulpit\TAB-github\TABDRA4\TABProject\obj\Debug\TABProject.pdb
 C:\Users\kasia\OneDrive\Pulpit\TAB-github\TABDRA4\TABProject\obj\Debug\TABProject.EditIssue.resources
 C:\Users\kasia\OneDrive\Pulpit\TAB-github\TABDRA4\TABProject\obj\Debug\TABProject.EditTask.resources
+C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\obj\Debug\TABProject.EditIssue.resources
+C:\Users\User\Desktop\PROGRAMOWANIE\C#\TABDRA4\TABProject\obj\Debug\TABProject.EditTask.resources
