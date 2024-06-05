@@ -127,6 +127,7 @@
             this.tbRequestID.Multiline = true;
             this.tbRequestID.Name = "tbRequestID";
             this.tbRequestID.ReadOnly = true;
+            this.tbRequestID.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbRequestID.Size = new System.Drawing.Size(279, 81);
             this.tbRequestID.TabIndex = 21;
             // 

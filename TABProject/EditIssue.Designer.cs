@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.bSave = new System.Windows.Forms.Button();
-            this.comboBoxPM = new System.Windows.Forms.ComboBox();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
             this.lStatus = new System.Windows.Forms.Label();
             this.lEditIssue = new System.Windows.Forms.Label();
             this.bReturn = new System.Windows.Forms.Button();
             this.tbRequestID = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
             this.lType = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxProdM = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lDescription = new System.Windows.Forms.Label();
@@ -51,18 +51,14 @@
             this.bSave.Text = "Save";
             this.bSave.UseVisualStyleBackColor = true;
             // 
-            // comboBoxPM
+            // cbStatus
             // 
-            this.comboBoxPM.FormattingEnabled = true;
-            this.comboBoxPM.Items.AddRange(new object[] {
-            "Open",
-            "In Prog",
-            "Closed",
-            "Cancelled"});
-            this.comboBoxPM.Location = new System.Drawing.Point(15, 215);
-            this.comboBoxPM.Name = "comboBoxPM";
-            this.comboBoxPM.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxPM.TabIndex = 15;
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Location = new System.Drawing.Point(15, 215);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(160, 24);
+            this.cbStatus.TabIndex = 15;
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.comboBoxPM_SelectedIndexChanged);
             // 
             // lStatus
             // 
@@ -101,17 +97,17 @@
             this.tbRequestID.Size = new System.Drawing.Size(464, 79);
             this.tbRequestID.TabIndex = 22;
             // 
-            // comboBox1
+            // cbType
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cbType.AutoCompleteCustomSource.AddRange(new string[] {
             "Bug",
             "Feature",
             "Improve"});
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 161);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 24;
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(15, 161);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(160, 24);
+            this.cbType.TabIndex = 24;
             // 
             // lType
             // 
@@ -122,13 +118,13 @@
             this.lType.TabIndex = 23;
             this.lType.Text = "Choose type:";
             // 
-            // comboBox2
+            // comboBoxProdM
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(15, 271);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 24);
-            this.comboBox2.TabIndex = 26;
+            this.comboBoxProdM.FormattingEnabled = true;
+            this.comboBoxProdM.Location = new System.Drawing.Point(15, 271);
+            this.comboBoxProdM.Name = "comboBoxProdM";
+            this.comboBoxProdM.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxProdM.TabIndex = 26;
             // 
             // label2
             // 
@@ -163,15 +159,15 @@
             this.ClientSize = new System.Drawing.Size(592, 330);
             this.Controls.Add(this.lDescription);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxProdM);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.lType);
             this.Controls.Add(this.tbRequestID);
             this.Controls.Add(this.bReturn);
             this.Controls.Add(this.lEditIssue);
             this.Controls.Add(this.bSave);
-            this.Controls.Add(this.comboBoxPM);
+            this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.lStatus);
             this.Name = "EditIssue";
             this.Text = "Task Management System - Editing Issue";
@@ -184,14 +180,14 @@
         #endregion
 
         private System.Windows.Forms.Button bSave;
-        private System.Windows.Forms.ComboBox comboBoxPM;
+        private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Label lStatus;
         private System.Windows.Forms.Label lEditIssue;
         private System.Windows.Forms.Button bReturn;
         private System.Windows.Forms.TextBox tbRequestID;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label lType;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxProdM;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lDescription;

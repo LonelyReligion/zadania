@@ -16,6 +16,7 @@ namespace TABProject
     {
         decimal acc_id;
         decimal request_id;
+        decimal issuse_id;
 
         IQueryable<issue> issue = null;
 
@@ -60,8 +61,11 @@ namespace TABProject
                 String stat = rqst.status;
                 String res = rqst.result;
                 decimal idAcc = rqst.id_account_manager;
-                tbRequestID.Text = "Id Reqst: " + this.request_id.ToString()+" Desc: " + desc + " Status: " + stat +
-                   " Res: " + res + " Id ACCMan: " + idAcc.ToString();
+                tbRequestID.Text = "Id Reqst: " + this.request_id.ToString() + Environment.NewLine +
+                  "Desc: " + desc + Environment.NewLine +
+                  "Status: " + stat + Environment.NewLine +
+                  "Res: " + res + Environment.NewLine +
+                  "Id ACCMan: " + idAcc.ToString();
             }
             dane();
         }
@@ -78,7 +82,23 @@ namespace TABProject
 
         private void bEdit_Click(object sender, EventArgs e)
         {
-            new EditIssue().Show();
+            try
+            {
+                DataGridViewRow row = this.dataGridView1.SelectedRows[0];
+                using (var db = new TABContext())
+                {
+                    var iss = db.issues.Find(row.Cells[0].Value);//id taska potrzebne do zmiany
+                    issuse_id = iss.id_issue;
+                }
+                EditIssue editIssue = new EditIssue(issuse_id);
+                editIssue.Show();
+            }
+            catch (Exception ex)
+            {
+                //ktos nie zaznaczyl wiersza :/
+            }
+            //
+            //new EditIssue().Show();
             //this.Hide();
         }
 
@@ -113,8 +133,11 @@ namespace TABProject
                     String stat = rqst.status;
                     String res = rqst.result;
                     decimal idAcc = rqst.id_account_manager;
-                    tbRequestID.Text = "Id Reqst: " + this.request_id.ToString() + " Desc: " + desc + " Status: " + stat +
-                       " Res: " + res + " Id ACCMan: " + idAcc.ToString();
+                    tbRequestID.Text = "Id Reqst: " + this.request_id.ToString() + Environment.NewLine +
+                   "Desc: " + desc + Environment.NewLine +
+                   "Status: " + stat + Environment.NewLine +
+                   "Res: " + res + Environment.NewLine +
+                   "Id ACCMan: " + idAcc.ToString();
                 }
             }
             catch (Exception ex)
