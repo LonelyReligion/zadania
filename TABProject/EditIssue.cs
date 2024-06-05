@@ -12,8 +12,16 @@ namespace TABProject
 {
     public partial class EditIssue : Form
     {
+        decimal issuse_id;
+        IQueryable<issue> issue = null;
         public EditIssue()
         {
+            InitializeComponent();
+        }
+
+        public EditIssue(decimal issuse_id)
+        {
+            this.issuse_id = issuse_id;
             InitializeComponent();
         }
 
@@ -24,7 +32,16 @@ namespace TABProject
 
         private void EditIssue_Load(object sender, EventArgs e)
         {
-
+            using (var db = new TABContext())
+            {
+                var iss = db.issues.Find(issuse_id);
+                String desc = iss.description;
+                String stat = iss.status;
+                String res = iss.result;
+                //decimal idProd = iss.id_product_manager;
+                tbRequestID.Text = "Id Issue: " + this.issuse_id.ToString() + " Desc: " + desc + " Status: " + stat +
+                   " Res: " + res;
+            }
         }
     }
 }

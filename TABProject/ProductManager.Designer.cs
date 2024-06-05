@@ -37,12 +37,12 @@
             this.bReturn = new System.Windows.Forms.Button();
             this.lResult = new System.Windows.Forms.Label();
             this.tbResult = new System.Windows.Forms.TextBox();
-            this.cbInProgress = new System.Windows.Forms.CheckBox();
-            this.cbFinal = new System.Windows.Forms.CheckBox();
             this.lTaskStatus = new System.Windows.Forms.Label();
-            this.cbCancel = new System.Windows.Forms.CheckBox();
             this.bSave = new System.Windows.Forms.Button();
             this.bEditTask = new System.Windows.Forms.Button();
+            this.rbFinal = new System.Windows.Forms.RadioButton();
+            this.rbCancel = new System.Windows.Forms.RadioButton();
+            this.rbInProgress = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,26 +130,6 @@
             this.tbResult.Size = new System.Drawing.Size(257, 81);
             this.tbResult.TabIndex = 44;
             // 
-            // cbInProgress
-            // 
-            this.cbInProgress.AutoSize = true;
-            this.cbInProgress.Location = new System.Drawing.Point(342, 50);
-            this.cbInProgress.Name = "cbInProgress";
-            this.cbInProgress.Size = new System.Drawing.Size(96, 20);
-            this.cbInProgress.TabIndex = 43;
-            this.cbInProgress.Text = "In progress";
-            this.cbInProgress.UseVisualStyleBackColor = true;
-            // 
-            // cbFinal
-            // 
-            this.cbFinal.AutoSize = true;
-            this.cbFinal.Location = new System.Drawing.Point(342, 102);
-            this.cbFinal.Name = "cbFinal";
-            this.cbFinal.Size = new System.Drawing.Size(58, 20);
-            this.cbFinal.TabIndex = 42;
-            this.cbFinal.Text = "Final";
-            this.cbFinal.UseVisualStyleBackColor = true;
-            // 
             // lTaskStatus
             // 
             this.lTaskStatus.AutoSize = true;
@@ -158,16 +138,6 @@
             this.lTaskStatus.Size = new System.Drawing.Size(79, 16);
             this.lTaskStatus.TabIndex = 41;
             this.lTaskStatus.Text = "Task status:";
-            // 
-            // cbCancel
-            // 
-            this.cbCancel.AutoSize = true;
-            this.cbCancel.Location = new System.Drawing.Point(342, 76);
-            this.cbCancel.Name = "cbCancel";
-            this.cbCancel.Size = new System.Drawing.Size(71, 20);
-            this.cbCancel.TabIndex = 40;
-            this.cbCancel.Text = "Cancel";
-            this.cbCancel.UseVisualStyleBackColor = true;
             // 
             // bSave
             // 
@@ -188,18 +158,51 @@
             this.bEditTask.UseVisualStyleBackColor = true;
             this.bEditTask.Click += new System.EventHandler(this.bEditTask_Click);
             // 
+            // rbFinal
+            // 
+            this.rbFinal.AutoSize = true;
+            this.rbFinal.Location = new System.Drawing.Point(342, 102);
+            this.rbFinal.Name = "rbFinal";
+            this.rbFinal.Size = new System.Drawing.Size(57, 20);
+            this.rbFinal.TabIndex = 49;
+            this.rbFinal.TabStop = true;
+            this.rbFinal.Text = "Final";
+            this.rbFinal.UseVisualStyleBackColor = true;
+            // 
+            // rbCancel
+            // 
+            this.rbCancel.AutoSize = true;
+            this.rbCancel.Location = new System.Drawing.Point(342, 76);
+            this.rbCancel.Name = "rbCancel";
+            this.rbCancel.Size = new System.Drawing.Size(70, 20);
+            this.rbCancel.TabIndex = 48;
+            this.rbCancel.TabStop = true;
+            this.rbCancel.Text = "Cancel";
+            this.rbCancel.UseVisualStyleBackColor = true;
+            // 
+            // rbInProgress
+            // 
+            this.rbInProgress.AutoSize = true;
+            this.rbInProgress.Location = new System.Drawing.Point(342, 50);
+            this.rbInProgress.Name = "rbInProgress";
+            this.rbInProgress.Size = new System.Drawing.Size(95, 20);
+            this.rbInProgress.TabIndex = 47;
+            this.rbInProgress.TabStop = true;
+            this.rbInProgress.Text = "In progress";
+            this.rbInProgress.UseVisualStyleBackColor = true;
+            // 
             // ProductManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 450);
+            this.Controls.Add(this.rbFinal);
+            this.Controls.Add(this.rbCancel);
+            this.Controls.Add(this.rbInProgress);
             this.Controls.Add(this.bEditTask);
             this.Controls.Add(this.lResult);
             this.Controls.Add(this.tbResult);
-            this.Controls.Add(this.cbInProgress);
-            this.Controls.Add(this.cbFinal);
             this.Controls.Add(this.lTaskStatus);
-            this.Controls.Add(this.cbCancel);
             this.Controls.Add(this.bSave);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tbRequestID);
@@ -227,11 +230,11 @@
         private System.Windows.Forms.Button bReturn;
         private System.Windows.Forms.Label lResult;
         private System.Windows.Forms.TextBox tbResult;
-        private System.Windows.Forms.CheckBox cbInProgress;
-        private System.Windows.Forms.CheckBox cbFinal;
         private System.Windows.Forms.Label lTaskStatus;
-        private System.Windows.Forms.CheckBox cbCancel;
         private System.Windows.Forms.Button bSave;
         private System.Windows.Forms.Button bEditTask;
+        private System.Windows.Forms.RadioButton rbFinal;
+        private System.Windows.Forms.RadioButton rbCancel;
+        private System.Windows.Forms.RadioButton rbInProgress;
     }
 }

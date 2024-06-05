@@ -54,6 +54,11 @@
             // comboBoxPM
             // 
             this.comboBoxPM.FormattingEnabled = true;
+            this.comboBoxPM.Items.AddRange(new object[] {
+            "Open",
+            "In Prog",
+            "Closed",
+            "Cancelled"});
             this.comboBoxPM.Location = new System.Drawing.Point(15, 215);
             this.comboBoxPM.Name = "comboBoxPM";
             this.comboBoxPM.Size = new System.Drawing.Size(160, 24);
@@ -98,6 +103,10 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            "Bug",
+            "Feature",
+            "Improve"});
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(15, 161);
             this.comboBox1.Name = "comboBox1";

@@ -262,26 +262,6 @@
     <Compile Include="system.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="TABDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TABDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TABDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TABDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TABDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TABDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TABDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TABDataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="version.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -353,50 +333,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TABDataSet.xsc">
-      <DependentUpon>TABDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TABDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TABDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TABDataSet.xss">
-      <DependentUpon>TABDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TABDataSet1.xsc">
-      <DependentUpon>TABDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="TABDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TABDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TABDataSet1.xss">
-      <DependentUpon>TABDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="TABDataSet2.xsc">
-      <DependentUpon>TABDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="TABDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TABDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TABDataSet2.xss">
-      <DependentUpon>TABDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="TABDataSet3.xsc">
-      <DependentUpon>TABDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="TABDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TABDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TABDataSet3.xss">
-      <DependentUpon>TABDataSet3.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

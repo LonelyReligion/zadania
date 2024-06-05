@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.bReturn = new System.Windows.Forms.Button();
-            this.cbCancel = new System.Windows.Forms.CheckBox();
             this.bAddNewIssue = new System.Windows.Forms.Button();
             this.bDeleteIssue = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -42,10 +41,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bEdit = new System.Windows.Forms.Button();
-            this.cbFinal = new System.Windows.Forms.CheckBox();
-            this.cbInProgress = new System.Windows.Forms.CheckBox();
             this.tbResult = new System.Windows.Forms.TextBox();
             this.lResult = new System.Windows.Forms.Label();
+            this.rbInProgress = new System.Windows.Forms.RadioButton();
+            this.rbCancel = new System.Windows.Forms.RadioButton();
+            this.rbFinal = new System.Windows.Forms.RadioButton();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -59,16 +59,6 @@
             this.bReturn.Text = "Return";
             this.bReturn.UseVisualStyleBackColor = true;
             this.bReturn.Click += new System.EventHandler(this.bReturn_Click);
-            // 
-            // cbCancel
-            // 
-            this.cbCancel.AutoSize = true;
-            this.cbCancel.Location = new System.Drawing.Point(341, 76);
-            this.cbCancel.Name = "cbCancel";
-            this.cbCancel.Size = new System.Drawing.Size(71, 20);
-            this.cbCancel.TabIndex = 4;
-            this.cbCancel.Text = "Cancel";
-            this.cbCancel.UseVisualStyleBackColor = true;
             // 
             // bAddNewIssue
             // 
@@ -111,6 +101,7 @@
             this.bSave.TabIndex = 1;
             this.bSave.Text = "Save request";
             this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
             // lRequest
             // 
@@ -168,26 +159,6 @@
             this.bEdit.UseVisualStyleBackColor = true;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             // 
-            // cbFinal
-            // 
-            this.cbFinal.AutoSize = true;
-            this.cbFinal.Location = new System.Drawing.Point(341, 102);
-            this.cbFinal.Name = "cbFinal";
-            this.cbFinal.Size = new System.Drawing.Size(58, 20);
-            this.cbFinal.TabIndex = 25;
-            this.cbFinal.Text = "Final";
-            this.cbFinal.UseVisualStyleBackColor = true;
-            // 
-            // cbInProgress
-            // 
-            this.cbInProgress.AutoSize = true;
-            this.cbInProgress.Location = new System.Drawing.Point(341, 50);
-            this.cbInProgress.Name = "cbInProgress";
-            this.cbInProgress.Size = new System.Drawing.Size(96, 20);
-            this.cbInProgress.TabIndex = 26;
-            this.cbInProgress.Text = "In progress";
-            this.cbInProgress.UseVisualStyleBackColor = true;
-            // 
             // tbResult
             // 
             this.tbResult.Location = new System.Drawing.Point(464, 46);
@@ -206,15 +177,49 @@
             this.lResult.TabIndex = 29;
             this.lResult.Text = "Result:";
             // 
+            // rbInProgress
+            // 
+            this.rbInProgress.AutoSize = true;
+            this.rbInProgress.Location = new System.Drawing.Point(334, 49);
+            this.rbInProgress.Name = "rbInProgress";
+            this.rbInProgress.Size = new System.Drawing.Size(95, 20);
+            this.rbInProgress.TabIndex = 30;
+            this.rbInProgress.TabStop = true;
+            this.rbInProgress.Text = "In progress";
+            this.rbInProgress.UseVisualStyleBackColor = true;
+            // 
+            // rbCancel
+            // 
+            this.rbCancel.AutoSize = true;
+            this.rbCancel.Location = new System.Drawing.Point(334, 75);
+            this.rbCancel.Name = "rbCancel";
+            this.rbCancel.Size = new System.Drawing.Size(70, 20);
+            this.rbCancel.TabIndex = 31;
+            this.rbCancel.TabStop = true;
+            this.rbCancel.Text = "Cancel";
+            this.rbCancel.UseVisualStyleBackColor = true;
+            // 
+            // rbFinal
+            // 
+            this.rbFinal.AutoSize = true;
+            this.rbFinal.Location = new System.Drawing.Point(334, 101);
+            this.rbFinal.Name = "rbFinal";
+            this.rbFinal.Size = new System.Drawing.Size(57, 20);
+            this.rbFinal.TabIndex = 32;
+            this.rbFinal.TabStop = true;
+            this.rbFinal.Text = "Final";
+            this.rbFinal.UseVisualStyleBackColor = true;
+            // 
             // ACCManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 450);
+            this.Controls.Add(this.rbFinal);
+            this.Controls.Add(this.rbCancel);
+            this.Controls.Add(this.rbInProgress);
             this.Controls.Add(this.lResult);
             this.Controls.Add(this.tbResult);
-            this.Controls.Add(this.cbInProgress);
-            this.Controls.Add(this.cbFinal);
             this.Controls.Add(this.bEdit);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -223,11 +228,9 @@
             this.Controls.Add(this.lRequest);
             this.Controls.Add(this.bDeleteIssue);
             this.Controls.Add(this.bAddNewIssue);
-            this.Controls.Add(this.cbCancel);
             this.Controls.Add(this.bReturn);
             this.Controls.Add(this.bSave);
             this.Name = "ACCManager";
-            this.Text = "Task Management System - Request Details";
             this.Load += new System.EventHandler(this.ACCManager_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip1.PerformLayout();
@@ -239,7 +242,6 @@
 
         #endregion
         private System.Windows.Forms.Button bReturn;
-        private System.Windows.Forms.CheckBox cbCancel;
         private System.Windows.Forms.Button bAddNewIssue;
         private System.Windows.Forms.Button bDeleteIssue;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -251,9 +253,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button bEdit;
-        private System.Windows.Forms.CheckBox cbFinal;
-        private System.Windows.Forms.CheckBox cbInProgress;
         private System.Windows.Forms.TextBox tbResult;
         private System.Windows.Forms.Label lResult;
+        private System.Windows.Forms.RadioButton rbInProgress;
+        private System.Windows.Forms.RadioButton rbCancel;
+        private System.Windows.Forms.RadioButton rbFinal;
     }
 }

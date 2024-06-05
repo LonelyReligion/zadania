@@ -32,14 +32,11 @@
             this.bLogin = new System.Windows.Forms.Button();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.appuserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tABDataSet = new TABProject.TABDataSet();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lEmail = new System.Windows.Forms.Label();
             this.lPassword = new System.Windows.Forms.Label();
             this.lLoginResults = new System.Windows.Forms.Label();
-            this.app_userTableAdapter = new TABProject.TABDataSetTableAdapters.app_userTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // bLogin
@@ -60,16 +57,6 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(191, 22);
             this.tbEmail.TabIndex = 1;
-            // 
-            // appuserBindingSource
-            // 
-            this.appuserBindingSource.DataMember = "app_user";
-            this.appuserBindingSource.DataSource = this.tABDataSet;
-            // 
-            // tABDataSet
-            // 
-            this.tABDataSet.DataSetName = "TABDataSet";
-            this.tABDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tbPassword
             // 
@@ -106,11 +93,7 @@
             this.lLoginResults.Location = new System.Drawing.Point(303, 301);
             this.lLoginResults.Name = "lLoginResults";
             this.lLoginResults.Size = new System.Drawing.Size(0, 16);
-            this.lLoginResults.TabIndex = 5;
-            // 
-            // app_userTableAdapter
-            // 
-            this.app_userTableAdapter.ClearBeforeFill = true;
+            this.lLoginResults.TabIndex = 5; 
             // 
             // LoginView
             // 
@@ -130,7 +113,6 @@
             this.Load += new System.EventHandler(this.LoginView_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginView_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,9 +126,7 @@
         private System.Windows.Forms.Label lEmail;
         private System.Windows.Forms.Label lPassword;
         private System.Windows.Forms.Label lLoginResults;
-        private TABDataSet tABDataSet;
         private System.Windows.Forms.BindingSource appuserBindingSource;
-        private TABDataSetTableAdapters.app_userTableAdapter app_userTableAdapter;
     }
 }
 

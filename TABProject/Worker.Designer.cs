@@ -41,8 +41,6 @@
             this.idissueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtfinalcancelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workertaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tABDataSet3 = new TABProject.TABDataSet3();
-            this.worker_taskTableAdapter = new TABProject.TABDataSet3TableAdapters.worker_taskTableAdapter();
             this.lRegistrationDate = new System.Windows.Forms.Label();
             this.dataTime = new System.Windows.Forms.DateTimePicker();
             this.cbFinal = new System.Windows.Forms.CheckBox();
@@ -55,7 +53,6 @@
             this.bSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workertaskBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // bLogOut
@@ -181,16 +178,6 @@
             // workertaskBindingSource
             // 
             this.workertaskBindingSource.DataMember = "worker_task";
-            this.workertaskBindingSource.DataSource = this.tABDataSet3;
-            // 
-            // tABDataSet3
-            // 
-            this.tABDataSet3.DataSetName = "TABDataSet3";
-            this.tABDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // worker_taskTableAdapter
-            // 
-            this.worker_taskTableAdapter.ClearBeforeFill = true;
             // 
             // lRegistrationDate
             // 
@@ -322,7 +309,6 @@
             this.Load += new System.EventHandler(this.Worker_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workertaskBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,9 +319,7 @@
         private System.Windows.Forms.Button bLogOut;
         private System.Windows.Forms.Button bSave;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private TABDataSet3 tABDataSet3;
         private System.Windows.Forms.BindingSource workertaskBindingSource;
-        private TABDataSet3TableAdapters.worker_taskTableAdapter worker_taskTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idworkertaskDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idworkerDataGridViewTextBoxColumn;

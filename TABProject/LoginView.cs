@@ -107,9 +107,6 @@ namespace TABProject
 
         private void LoginView_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'tABDataSet.app_user' table. You can move, or remove it, as needed.
-            this.app_userTableAdapter.Fill(this.tABDataSet.app_user);
-
         }
 
         private void lEmail_Click(object sender, EventArgs e)
