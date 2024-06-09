@@ -68,6 +68,7 @@
             this.bSearch.TabIndex = 15;
             this.bSearch.Text = "Search";
             this.bSearch.UseVisualStyleBackColor = true;
+            this.bSearch.Click += new System.EventHandler(this.bSearch_Click);
             // 
             // lRegistrationDate
             // 
@@ -90,8 +91,6 @@
             // cbMine
             // 
             this.cbMine.AutoSize = true;
-            this.cbMine.Checked = true;
-            this.cbMine.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMine.Location = new System.Drawing.Point(422, 63);
             this.cbMine.Name = "cbMine";
             this.cbMine.Size = new System.Drawing.Size(58, 20);
@@ -109,6 +108,7 @@
             // 
             // dataTime
             // 
+            this.dataTime.Checked = false;
             this.dataTime.Location = new System.Drawing.Point(33, 61);
             this.dataTime.Name = "dataTime";
             this.dataTime.ShowCheckBox = true;
@@ -141,6 +141,7 @@
             this.Controls.Add(this.dgTabela);
             this.Name = "ProductIssuesList";
             this.Text = "Task Management System - Issues List";
+            this.Load += new System.EventHandler(this.ProductIssuesList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTabela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -78,6 +78,7 @@
             this.bDeleteIssue.TabIndex = 8;
             this.bDeleteIssue.Text = "Delete issue";
             this.bDeleteIssue.UseVisualStyleBackColor = true;
+            this.bDeleteIssue.Click += new System.EventHandler(this.bDeleteIssue_Click);
             // 
             // contextMenuStrip1
             // 

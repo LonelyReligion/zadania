@@ -58,6 +58,7 @@ namespace TABProject
                     }
                     else
                     {
+                        lLoginResults.Text = "Wrong login or password!";
                         Console.WriteLine("Wrong password " + tbPassword.Text + "+" + correct_login.password + " " + correct_password);
                     }
                 }

@@ -29,6 +29,18 @@ namespace TABProject
             }
         }
 
+        public void RefreshDataGridView()
+        {            
+            dane(); 
+        }
+
+        /*
+        public DataGridView GetDataGridView()
+        {
+            return dataGridView1;
+        }
+        */
+
         public ACCManager()
         {
             InitializeComponent();
@@ -48,7 +60,7 @@ namespace TABProject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            new NewIssue().Show();
+            new NewIssue(request_id).Show();
             //this.Hide();
         }
 
@@ -90,7 +102,7 @@ namespace TABProject
                     var iss = db.issues.Find(row.Cells[0].Value);//id taska potrzebne do zmiany
                     issuse_id = iss.id_issue;
                 }
-                EditIssue editIssue = new EditIssue(issuse_id);
+                EditIssue editIssue = new EditIssue(issuse_id); //, this);
                 editIssue.Show();
             }
             catch (Exception ex)
@@ -113,11 +125,13 @@ namespace TABProject
                     if (rbInProgress.Checked)
                     {
                         rqst.status = "in progr";
+                        //rqst.result = tbResult.Text; //results
                         rqst.dt_final_cancel = null;
                     }
                     else if (rbCancel.Checked)
                     {
                         rqst.status = "cancelled";
+                        //rqst.result = tbResult.Text; //results
                         rqst.dt_final_cancel = DateTime.Now;
                     }
                     else if (rbFinal.Checked)
@@ -139,6 +153,37 @@ namespace TABProject
                    "Res: " + res + Environment.NewLine +
                    "Id ACCMan: " + idAcc.ToString();
                 }
+            }
+            catch (Exception ex)
+            {
+                //ktos nie zaznaczyl wiersza :/
+            }
+        }
+
+        private void bDeleteIssue_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this issue?", "Delete issue", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    DataGridViewRow row = this.dataGridView1.SelectedRows[0];
+                    using (var db = new TABContext())
+                    {
+                        var iss = db.issues.Find(row.Cells[0].Value);//id taska potrzebne do zmiany
+
+                        db.issues.Remove(iss);
+                        db.SaveChanges();
+
+                    }
+                }
+                else
+                {
+                    // Użytkownik anulował operację usuwania, nie rób nic
+                }             
+                
             }
             catch (Exception ex)
             {

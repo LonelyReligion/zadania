@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.bAdd = new System.Windows.Forms.Button();
-            this.bReturn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
             this.lType = new System.Windows.Forms.Label();
             this.lDescription = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDesc = new System.Windows.Forms.TextBox();
             this.lAddNewIssue = new System.Windows.Forms.Label();
+            this.lProdMan = new System.Windows.Forms.Label();
+            this.cbProductMan = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // bAdd
@@ -45,24 +46,15 @@
             this.bAdd.TabIndex = 0;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
-            // bReturn
+            // cbType
             // 
-            this.bReturn.Location = new System.Drawing.Point(365, 12);
-            this.bReturn.Name = "bReturn";
-            this.bReturn.Size = new System.Drawing.Size(95, 31);
-            this.bReturn.TabIndex = 1;
-            this.bReturn.Text = "Return";
-            this.bReturn.UseVisualStyleBackColor = true;
-            this.bReturn.Click += new System.EventHandler(this.bReturn_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 65);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 24);
-            this.comboBox1.TabIndex = 2;
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(15, 65);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(158, 24);
+            this.cbType.TabIndex = 2;
             // 
             // lType
             // 
@@ -82,13 +74,13 @@
             this.lDescription.TabIndex = 4;
             this.lDescription.Text = "Description:";
             // 
-            // textBox1
+            // tbDesc
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 120);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(341, 145);
-            this.textBox1.TabIndex = 5;
+            this.tbDesc.Location = new System.Drawing.Point(15, 120);
+            this.tbDesc.Multiline = true;
+            this.tbDesc.Name = "tbDesc";
+            this.tbDesc.Size = new System.Drawing.Size(341, 145);
+            this.tbDesc.TabIndex = 5;
             // 
             // lAddNewIssue
             // 
@@ -99,17 +91,35 @@
             this.lAddNewIssue.TabIndex = 6;
             this.lAddNewIssue.Text = "Add new issue:";
             // 
+            // lProdMan
+            // 
+            this.lProdMan.AutoSize = true;
+            this.lProdMan.Location = new System.Drawing.Point(185, 46);
+            this.lProdMan.Name = "lProdMan";
+            this.lProdMan.Size = new System.Drawing.Size(129, 16);
+            this.lProdMan.TabIndex = 8;
+            this.lProdMan.Text = "Product Manager ID:";
+            // 
+            // cbProductMan
+            // 
+            this.cbProductMan.FormattingEnabled = true;
+            this.cbProductMan.Location = new System.Drawing.Point(188, 65);
+            this.cbProductMan.Name = "cbProductMan";
+            this.cbProductMan.Size = new System.Drawing.Size(158, 24);
+            this.cbProductMan.TabIndex = 7;
+            // 
             // NewIssue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 314);
+            this.ClientSize = new System.Drawing.Size(380, 314);
+            this.Controls.Add(this.lProdMan);
+            this.Controls.Add(this.cbProductMan);
             this.Controls.Add(this.lAddNewIssue);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDesc);
             this.Controls.Add(this.lDescription);
             this.Controls.Add(this.lType);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.bReturn);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.bAdd);
             this.Name = "NewIssue";
             this.Text = "Task Management System - Adding new issue";
@@ -121,11 +131,12 @@
         #endregion
 
         private System.Windows.Forms.Button bAdd;
-        private System.Windows.Forms.Button bReturn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label lType;
         private System.Windows.Forms.Label lDescription;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDesc;
         private System.Windows.Forms.Label lAddNewIssue;
+        private System.Windows.Forms.Label lProdMan;
+        private System.Windows.Forms.ComboBox cbProductMan;
     }
 }

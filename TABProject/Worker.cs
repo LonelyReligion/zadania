@@ -46,7 +46,6 @@ namespace TABProject
 
         private void bSearch_Click(object sender, EventArgs e)
         {
-            //
             using (var db = new TABContext())
             {
                 if (cbMine.Checked && dataTime.Checked)
@@ -78,17 +77,19 @@ namespace TABProject
                 using (var db = new TABContext())
                 {
                     var tsk = db.worker_task.Find(row.Cells[0].Value);//id taska potrzebne do zmiany
-                    if (cbInProgress.Checked)
+                    if (rbInProg.Checked)
                     {
                         tsk.status = "in progr";
+                        //tsk.result = textBox1.Text; //results
                         tsk.dt_final_cancel = null;
                     }
-                    else if (cbCancel.Checked)
+                    else if (rbCancel.Checked)
                     {
                         tsk.status = "canceled";
+                        //tsk.result = textBox1.Text; //results
                         tsk.dt_final_cancel = DateTime.Now;
                     }
-                    else if (cbFinal.Checked)
+                    else if (rbFinal.Checked)
                     {
                         tsk.status = "closed";
                         tsk.result = textBox1.Text; //results
@@ -102,24 +103,6 @@ namespace TABProject
             {
                 //ktos nie zaznaczyl wiersza :/
             }
-        }
-
-        private void cbInProgress_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbInProgress.Checked) 
-                cbCancel.Checked = cbFinal.Checked = false;
-        }
-
-        private void cbFinal_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbFinal.Checked)
-                cbCancel.Checked = cbInProgress.Checked = false;
-        }
-
-        private void cbCancel_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbCancel.Checked)
-                cbFinal.Checked = cbInProgress.Checked = false;
         }
     }
 }

@@ -13,7 +13,17 @@ namespace TABProject
 {
     public partial class ACCRequestList : Form
 
-    { 
+    {
+        private void FillComboBox()
+        {
+            using (var db = new TABContext())
+            {
+                var stat = db.requests.Select(p => p.status).Distinct().ToList();
+
+                cbStatus.DataSource = stat;
+
+            }
+        }
 
         IQueryable<request> request = null;
         decimal request_id;
@@ -55,7 +65,9 @@ namespace TABProject
 
         private void ACCRequestList_Load(object sender, EventArgs e)
         {
+            FillComboBox();
             dane();
+            cbStatus.SelectedItem = null;
         }
 
         private void bSelect_Click(object sender, EventArgs e)

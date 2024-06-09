@@ -33,12 +33,12 @@
             this.lStatus = new System.Windows.Forms.Label();
             this.lEditIssue = new System.Windows.Forms.Label();
             this.bReturn = new System.Windows.Forms.Button();
-            this.tbRequestID = new System.Windows.Forms.TextBox();
+            this.tbIssueID = new System.Windows.Forms.TextBox();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.lType = new System.Windows.Forms.Label();
-            this.comboBoxProdM = new System.Windows.Forms.ComboBox();
+            this.cbProdM = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDesc = new System.Windows.Forms.TextBox();
             this.lDescription = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             this.bSave.TabIndex = 16;
             this.bSave.Text = "Save";
             this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
             // cbStatus
             // 
@@ -88,14 +89,15 @@
             this.bReturn.UseVisualStyleBackColor = true;
             this.bReturn.Click += new System.EventHandler(this.bReturn_Click);
             // 
-            // tbRequestID
+            // tbIssueID
             // 
-            this.tbRequestID.Location = new System.Drawing.Point(15, 43);
-            this.tbRequestID.Multiline = true;
-            this.tbRequestID.Name = "tbRequestID";
-            this.tbRequestID.ReadOnly = true;
-            this.tbRequestID.Size = new System.Drawing.Size(464, 79);
-            this.tbRequestID.TabIndex = 22;
+            this.tbIssueID.Location = new System.Drawing.Point(15, 43);
+            this.tbIssueID.Multiline = true;
+            this.tbIssueID.Name = "tbIssueID";
+            this.tbIssueID.ReadOnly = true;
+            this.tbIssueID.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbIssueID.Size = new System.Drawing.Size(464, 79);
+            this.tbIssueID.TabIndex = 22;
             // 
             // cbType
             // 
@@ -118,13 +120,13 @@
             this.lType.TabIndex = 23;
             this.lType.Text = "Choose type:";
             // 
-            // comboBoxProdM
+            // cbProdM
             // 
-            this.comboBoxProdM.FormattingEnabled = true;
-            this.comboBoxProdM.Location = new System.Drawing.Point(15, 271);
-            this.comboBoxProdM.Name = "comboBoxProdM";
-            this.comboBoxProdM.Size = new System.Drawing.Size(160, 24);
-            this.comboBoxProdM.TabIndex = 26;
+            this.cbProdM.FormattingEnabled = true;
+            this.cbProdM.Location = new System.Drawing.Point(15, 271);
+            this.cbProdM.Name = "cbProdM";
+            this.cbProdM.Size = new System.Drawing.Size(160, 24);
+            this.cbProdM.TabIndex = 26;
             // 
             // label2
             // 
@@ -135,13 +137,13 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Choose Product Manager:";
             // 
-            // textBox1
+            // tbDesc
             // 
-            this.textBox1.Location = new System.Drawing.Point(214, 163);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(357, 76);
-            this.textBox1.TabIndex = 27;
+            this.tbDesc.Location = new System.Drawing.Point(214, 163);
+            this.tbDesc.Multiline = true;
+            this.tbDesc.Name = "tbDesc";
+            this.tbDesc.Size = new System.Drawing.Size(357, 76);
+            this.tbDesc.TabIndex = 27;
             // 
             // lDescription
             // 
@@ -158,12 +160,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 330);
             this.Controls.Add(this.lDescription);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBoxProdM);
+            this.Controls.Add(this.tbDesc);
+            this.Controls.Add(this.cbProdM);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbType);
             this.Controls.Add(this.lType);
-            this.Controls.Add(this.tbRequestID);
+            this.Controls.Add(this.tbIssueID);
             this.Controls.Add(this.bReturn);
             this.Controls.Add(this.lEditIssue);
             this.Controls.Add(this.bSave);
@@ -171,6 +173,7 @@
             this.Controls.Add(this.lStatus);
             this.Name = "EditIssue";
             this.Text = "Task Management System - Editing Issue";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditIssue_FormClosed);
             this.Load += new System.EventHandler(this.EditIssue_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,12 +187,12 @@
         private System.Windows.Forms.Label lStatus;
         private System.Windows.Forms.Label lEditIssue;
         private System.Windows.Forms.Button bReturn;
-        private System.Windows.Forms.TextBox tbRequestID;
+        private System.Windows.Forms.TextBox tbIssueID;
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label lType;
-        private System.Windows.Forms.ComboBox comboBoxProdM;
+        private System.Windows.Forms.ComboBox cbProdM;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDesc;
         private System.Windows.Forms.Label lDescription;
     }
 }

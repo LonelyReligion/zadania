@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tbRequestID = new System.Windows.Forms.TextBox();
+            this.tbIssueID = new System.Windows.Forms.TextBox();
             this.lTasks = new System.Windows.Forms.Label();
             this.lRequestName = new System.Windows.Forms.Label();
             this.bDeleteTask = new System.Windows.Forms.Button();
@@ -56,23 +56,24 @@
             this.dataGridView1.Size = new System.Drawing.Size(722, 229);
             this.dataGridView1.TabIndex = 37;
             // 
-            // tbRequestID
+            // tbIssueID
             // 
-            this.tbRequestID.Location = new System.Drawing.Point(29, 48);
-            this.tbRequestID.Multiline = true;
-            this.tbRequestID.Name = "tbRequestID";
-            this.tbRequestID.ReadOnly = true;
-            this.tbRequestID.Size = new System.Drawing.Size(279, 71);
-            this.tbRequestID.TabIndex = 35;
+            this.tbIssueID.Location = new System.Drawing.Point(29, 48);
+            this.tbIssueID.Multiline = true;
+            this.tbIssueID.Name = "tbIssueID";
+            this.tbIssueID.ReadOnly = true;
+            this.tbIssueID.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbIssueID.Size = new System.Drawing.Size(279, 71);
+            this.tbIssueID.TabIndex = 35;
             // 
             // lTasks
             // 
             this.lTasks.AutoSize = true;
             this.lTasks.Location = new System.Drawing.Point(28, 139);
             this.lTasks.Name = "lTasks";
-            this.lTasks.Size = new System.Drawing.Size(137, 16);
+            this.lTasks.Size = new System.Drawing.Size(124, 16);
             this.lTasks.TabIndex = 34;
-            this.lTasks.Text = "Tasks for this request:";
+            this.lTasks.Text = "Tasks for this issue:";
             // 
             // lRequestName
             // 
@@ -92,6 +93,7 @@
             this.bDeleteTask.TabIndex = 29;
             this.bDeleteTask.Text = "Delete task";
             this.bDeleteTask.UseVisualStyleBackColor = true;
+            this.bDeleteTask.Click += new System.EventHandler(this.bDeleteTask_Click);
             // 
             // bAddNewTask
             // 
@@ -145,8 +147,9 @@
             this.bSave.Name = "bSave";
             this.bSave.Size = new System.Drawing.Size(110, 56);
             this.bSave.TabIndex = 38;
-            this.bSave.Text = "Save request";
+            this.bSave.Text = "Save issue";
             this.bSave.UseVisualStyleBackColor = true;
+            this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
             // bEditTask
             // 
@@ -205,7 +208,7 @@
             this.Controls.Add(this.lTaskStatus);
             this.Controls.Add(this.bSave);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.tbRequestID);
+            this.Controls.Add(this.tbIssueID);
             this.Controls.Add(this.lTasks);
             this.Controls.Add(this.lRequestName);
             this.Controls.Add(this.bDeleteTask);
@@ -213,6 +216,7 @@
             this.Controls.Add(this.bReturn);
             this.Name = "ProductManager";
             this.Text = "Task Management System - Issues Details";
+            this.Load += new System.EventHandler(this.ProductManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -222,7 +226,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox tbRequestID;
+        private System.Windows.Forms.TextBox tbIssueID;
         private System.Windows.Forms.Label lTasks;
         private System.Windows.Forms.Label lRequestName;
         private System.Windows.Forms.Button bDeleteTask;

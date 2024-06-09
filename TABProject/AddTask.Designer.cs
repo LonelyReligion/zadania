@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.lAddNewTask = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDesc = new System.Windows.Forms.TextBox();
             this.lDescription = new System.Windows.Forms.Label();
-            this.lType = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.bReturn = new System.Windows.Forms.Button();
+            this.lWorkerID = new System.Windows.Forms.Label();
+            this.cbWorkerID = new System.Windows.Forms.ComboBox();
             this.bAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -46,13 +45,13 @@
             this.lAddNewTask.TabIndex = 13;
             this.lAddNewTask.Text = "Add new task:";
             // 
-            // textBox1
+            // tbDesc
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 121);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(341, 145);
-            this.textBox1.TabIndex = 12;
+            this.tbDesc.Location = new System.Drawing.Point(15, 121);
+            this.tbDesc.Multiline = true;
+            this.tbDesc.Name = "tbDesc";
+            this.tbDesc.Size = new System.Drawing.Size(341, 145);
+            this.tbDesc.TabIndex = 12;
             // 
             // lDescription
             // 
@@ -63,32 +62,22 @@
             this.lDescription.TabIndex = 11;
             this.lDescription.Text = "Description:";
             // 
-            // lType
+            // lWorkerID
             // 
-            this.lType.AutoSize = true;
-            this.lType.Location = new System.Drawing.Point(12, 47);
-            this.lType.Name = "lType";
-            this.lType.Size = new System.Drawing.Size(42, 16);
-            this.lType.TabIndex = 10;
-            this.lType.Text = "Type:";
+            this.lWorkerID.AutoSize = true;
+            this.lWorkerID.Location = new System.Drawing.Point(12, 47);
+            this.lWorkerID.Name = "lWorkerID";
+            this.lWorkerID.Size = new System.Drawing.Size(70, 16);
+            this.lWorkerID.TabIndex = 10;
+            this.lWorkerID.Text = "Worker ID:";
             // 
-            // comboBox1
+            // cbWorkerID
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 24);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // bReturn
-            // 
-            this.bReturn.Location = new System.Drawing.Point(376, 6);
-            this.bReturn.Name = "bReturn";
-            this.bReturn.Size = new System.Drawing.Size(95, 31);
-            this.bReturn.TabIndex = 8;
-            this.bReturn.Text = "Return";
-            this.bReturn.UseVisualStyleBackColor = true;
-            this.bReturn.Click += new System.EventHandler(this.bReturn_Click);
+            this.cbWorkerID.FormattingEnabled = true;
+            this.cbWorkerID.Location = new System.Drawing.Point(15, 66);
+            this.cbWorkerID.Name = "cbWorkerID";
+            this.cbWorkerID.Size = new System.Drawing.Size(158, 24);
+            this.cbWorkerID.TabIndex = 9;
             // 
             // bAdd
             // 
@@ -98,18 +87,18 @@
             this.bAdd.TabIndex = 7;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
+            this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // AddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 308);
+            this.ClientSize = new System.Drawing.Size(385, 308);
             this.Controls.Add(this.lAddNewTask);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDesc);
             this.Controls.Add(this.lDescription);
-            this.Controls.Add(this.lType);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.bReturn);
+            this.Controls.Add(this.lWorkerID);
+            this.Controls.Add(this.cbWorkerID);
             this.Controls.Add(this.bAdd);
             this.Name = "AddTask";
             this.Text = "Task Management System - Adding new task";
@@ -121,11 +110,10 @@
         #endregion
 
         private System.Windows.Forms.Label lAddNewTask;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDesc;
         private System.Windows.Forms.Label lDescription;
-        private System.Windows.Forms.Label lType;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button bReturn;
+        private System.Windows.Forms.Label lWorkerID;
+        private System.Windows.Forms.ComboBox cbWorkerID;
         private System.Windows.Forms.Button bAdd;
     }
 }

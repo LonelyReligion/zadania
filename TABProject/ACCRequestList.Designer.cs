@@ -53,6 +53,7 @@
             // 
             // dataTime
             // 
+            this.dataTime.Checked = false;
             this.dataTime.Location = new System.Drawing.Point(42, 61);
             this.dataTime.Name = "dataTime";
             this.dataTime.ShowCheckBox = true;
@@ -62,11 +63,6 @@
             // cbStatus
             // 
             this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "in progr",
-            "open",
-            "closed",
-            "cancelled"});
             this.cbStatus.Location = new System.Drawing.Point(281, 61);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(121, 24);
@@ -76,8 +72,6 @@
             // cbMine
             // 
             this.cbMine.AutoSize = true;
-            this.cbMine.Checked = true;
-            this.cbMine.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbMine.Location = new System.Drawing.Point(431, 63);
             this.cbMine.Name = "cbMine";
             this.cbMine.Size = new System.Drawing.Size(58, 20);
