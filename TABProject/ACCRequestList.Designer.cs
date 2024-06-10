@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgTabela = new System.Windows.Forms.DataGridView();
             this.dataTime = new System.Windows.Forms.DateTimePicker();
             this.cbStatus = new System.Windows.Forms.ComboBox();
@@ -37,12 +38,36 @@
             this.bSearch = new System.Windows.Forms.Button();
             this.bSelect = new System.Windows.Forms.Button();
             this.bLogOut = new System.Windows.Forms.Button();
+            this.tABDataSet = new TABProject.TABDataSet();
+            this.requestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.requestTableAdapter = new TABProject.TABDataSetTableAdapters.requestTableAdapter();
+            this.idrequestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idaccountmanagerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idversionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtopenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtfinalcancelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTabela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgTabela
             // 
+            this.dgTabela.AutoGenerateColumns = false;
             this.dgTabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTabela.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idrequestDataGridViewTextBoxColumn,
+            this.idaccountmanagerDataGridViewTextBoxColumn,
+            this.idversionDataGridViewTextBoxColumn,
+            this.dtopenDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.resultDataGridViewTextBoxColumn,
+            this.dtfinalcancelDataGridViewTextBoxColumn});
+            this.dgTabela.DataSource = this.requestBindingSource;
             this.dgTabela.Location = new System.Drawing.Point(42, 105);
             this.dgTabela.Name = "dgTabela";
             this.dgTabela.RowHeadersWidth = 51;
@@ -128,6 +153,85 @@
             this.bLogOut.UseVisualStyleBackColor = true;
             this.bLogOut.Click += new System.EventHandler(this.bLogOut_Click);
             // 
+            // tABDataSet
+            // 
+            this.tABDataSet.DataSetName = "TABDataSet";
+            this.tABDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // requestBindingSource
+            // 
+            this.requestBindingSource.DataMember = "request";
+            this.requestBindingSource.DataSource = this.tABDataSet;
+            // 
+            // requestTableAdapter
+            // 
+            this.requestTableAdapter.ClearBeforeFill = true;
+            // 
+            // idrequestDataGridViewTextBoxColumn
+            // 
+            this.idrequestDataGridViewTextBoxColumn.DataPropertyName = "id_request";
+            this.idrequestDataGridViewTextBoxColumn.HeaderText = "id_request";
+            this.idrequestDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idrequestDataGridViewTextBoxColumn.Name = "idrequestDataGridViewTextBoxColumn";
+            this.idrequestDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idrequestDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idaccountmanagerDataGridViewTextBoxColumn
+            // 
+            this.idaccountmanagerDataGridViewTextBoxColumn.DataPropertyName = "id_account_manager";
+            this.idaccountmanagerDataGridViewTextBoxColumn.HeaderText = "id_account_manager";
+            this.idaccountmanagerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idaccountmanagerDataGridViewTextBoxColumn.Name = "idaccountmanagerDataGridViewTextBoxColumn";
+            this.idaccountmanagerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idversionDataGridViewTextBoxColumn
+            // 
+            this.idversionDataGridViewTextBoxColumn.DataPropertyName = "id_version";
+            this.idversionDataGridViewTextBoxColumn.HeaderText = "id_version";
+            this.idversionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idversionDataGridViewTextBoxColumn.Name = "idversionDataGridViewTextBoxColumn";
+            this.idversionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dtopenDataGridViewTextBoxColumn
+            // 
+            this.dtopenDataGridViewTextBoxColumn.DataPropertyName = "dt_open";
+            this.dtopenDataGridViewTextBoxColumn.HeaderText = "dt_open";
+            this.dtopenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dtopenDataGridViewTextBoxColumn.Name = "dtopenDataGridViewTextBoxColumn";
+            this.dtopenDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // resultDataGridViewTextBoxColumn
+            // 
+            this.resultDataGridViewTextBoxColumn.DataPropertyName = "result";
+            this.resultDataGridViewTextBoxColumn.HeaderText = "result";
+            this.resultDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
+            this.resultDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dtfinalcancelDataGridViewTextBoxColumn
+            // 
+            this.dtfinalcancelDataGridViewTextBoxColumn.DataPropertyName = "dt_final_cancel";
+            this.dtfinalcancelDataGridViewTextBoxColumn.HeaderText = "dt_final_cancel";
+            this.dtfinalcancelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dtfinalcancelDataGridViewTextBoxColumn.Name = "dtfinalcancelDataGridViewTextBoxColumn";
+            this.dtfinalcancelDataGridViewTextBoxColumn.Width = 125;
+            // 
             // ACCRequestList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,6 +250,8 @@
             this.Text = "Task Management System - Request List";
             this.Load += new System.EventHandler(this.ACCRequestList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTabela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +268,16 @@
         private System.Windows.Forms.Button bSearch;
         private System.Windows.Forms.Button bSelect;
         private System.Windows.Forms.Button bLogOut;
+        private TABDataSet tABDataSet;
+        private System.Windows.Forms.BindingSource requestBindingSource;
+        private TABDataSetTableAdapters.requestTableAdapter requestTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idrequestDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idaccountmanagerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idversionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtopenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resultDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtfinalcancelDataGridViewTextBoxColumn;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.bLogOut = new System.Windows.Forms.Button();
             this.bSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -41,7 +42,20 @@
             this.rbInProg = new System.Windows.Forms.RadioButton();
             this.rbFinal = new System.Windows.Forms.RadioButton();
             this.rbCancel = new System.Windows.Forms.RadioButton();
+            this.tABDataSet = new TABProject.TABDataSet();
+            this.workertaskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.worker_taskTableAdapter = new TABProject.TABDataSetTableAdapters.worker_taskTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workertaskBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bLogOut
@@ -70,7 +84,18 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.dataGridView1.DataSource = this.workertaskBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(32, 89);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
@@ -182,6 +207,92 @@
             this.rbCancel.Text = "Cancel";
             this.rbCancel.UseVisualStyleBackColor = true;
             // 
+            // tABDataSet
+            // 
+            this.tABDataSet.DataSetName = "TABDataSet";
+            this.tABDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // workertaskBindingSource
+            // 
+            this.workertaskBindingSource.DataMember = "worker_task";
+            this.workertaskBindingSource.DataSource = this.tABDataSet;
+            // 
+            // worker_taskTableAdapter
+            // 
+            this.worker_taskTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_worker_task";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id_worker_task";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "status";
+            this.dataGridViewTextBoxColumn2.HeaderText = "status";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "id_worker";
+            this.dataGridViewTextBoxColumn3.HeaderText = "id_worker";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "result";
+            this.dataGridViewTextBoxColumn4.HeaderText = "result";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn5.HeaderText = "description";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "dt_open";
+            this.dataGridViewTextBoxColumn6.HeaderText = "dt_open";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "id_issue";
+            this.dataGridViewTextBoxColumn7.HeaderText = "id_issue";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "dt_final_cancel";
+            this.dataGridViewTextBoxColumn8.HeaderText = "dt_final_cancel";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
             // Worker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,6 +316,8 @@
             this.Text = "Task Management System - Worker Console";
             this.Load += new System.EventHandler(this.Worker_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workertaskBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +346,16 @@
         private System.Windows.Forms.RadioButton rbInProg;
         private System.Windows.Forms.RadioButton rbFinal;
         private System.Windows.Forms.RadioButton rbCancel;
+        private TABDataSet tABDataSet;
+        private System.Windows.Forms.BindingSource workertaskBindingSource;
+        private TABDataSetTableAdapters.worker_taskTableAdapter worker_taskTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

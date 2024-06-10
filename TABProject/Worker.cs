@@ -39,6 +39,8 @@ namespace TABProject
 
         private void Worker_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tABDataSet.worker_task' table. You can move, or remove it, as needed.
+            this.worker_taskTableAdapter.Fill(this.tABDataSet.worker_task);
             // TODO: This line of code loads data into the 'tABDataSet3.worker_task' table. You can move, or remove it, as needed.
             //this.worker_taskTableAdapter.Fill(this.tABDataSet3.worker_task);
             dane();

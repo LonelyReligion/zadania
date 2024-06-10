@@ -89,6 +89,8 @@ namespace TABProject
 
         private void ProductManager_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tABDataSet.worker_task' table. You can move, or remove it, as needed.
+            this.worker_taskTableAdapter.Fill(this.tABDataSet.worker_task);
             using (var db = new TABContext())
             {
                 var iss = db.issues.Find(issuse_id);

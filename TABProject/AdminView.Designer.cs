@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.bLogOut = new System.Windows.Forms.Button();
             this.tbemail = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -46,7 +47,17 @@
             this.lNewPassword = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbRepeat = new System.Windows.Forms.TextBox();
+            this.tABDataSet = new TABProject.TABDataSet();
+            this.appuserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.app_userTableAdapter = new TABProject.TABDataSetTableAdapters.app_userTableAdapter();
+            this.idappuserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bLogOut
@@ -145,7 +156,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idappuserDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.loginDataGridViewTextBoxColumn,
+            this.activeDataGridViewCheckBoxColumn});
+            this.dataGridView1.DataSource = this.appuserBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(213, 29);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -216,6 +235,61 @@
             this.tbRepeat.Size = new System.Drawing.Size(155, 22);
             this.tbRepeat.TabIndex = 40;
             // 
+            // tABDataSet
+            // 
+            this.tABDataSet.DataSetName = "TABDataSet";
+            this.tABDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // appuserBindingSource
+            // 
+            this.appuserBindingSource.DataMember = "app_user";
+            this.appuserBindingSource.DataSource = this.tABDataSet;
+            // 
+            // app_userTableAdapter
+            // 
+            this.app_userTableAdapter.ClearBeforeFill = true;
+            // 
+            // idappuserDataGridViewTextBoxColumn
+            // 
+            this.idappuserDataGridViewTextBoxColumn.DataPropertyName = "id_app_user";
+            this.idappuserDataGridViewTextBoxColumn.HeaderText = "id_app_user";
+            this.idappuserDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idappuserDataGridViewTextBoxColumn.Name = "idappuserDataGridViewTextBoxColumn";
+            this.idappuserDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idappuserDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
+            this.typeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "login";
+            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // activeDataGridViewCheckBoxColumn
+            // 
+            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "active";
+            this.activeDataGridViewCheckBoxColumn.HeaderText = "active";
+            this.activeDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
+            this.activeDataGridViewCheckBoxColumn.Width = 125;
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,7 +316,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AdminView";
             this.Text = "Task Management System - Admin Console";
+            this.Load += new System.EventHandler(this.AdminView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +345,13 @@
         private System.Windows.Forms.Label lNewPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbRepeat;
+        private TABDataSet tABDataSet;
+        private System.Windows.Forms.BindingSource appuserBindingSource;
+        private TABDataSetTableAdapters.app_userTableAdapter app_userTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idappuserDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
     }
 }

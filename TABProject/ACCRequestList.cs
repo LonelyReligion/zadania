@@ -65,6 +65,8 @@ namespace TABProject
 
         private void ACCRequestList_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tABDataSet.request' table. You can move, or remove it, as needed.
+            this.requestTableAdapter.Fill(this.tABDataSet.request);
             FillComboBox();
             dane();
             cbStatus.SelectedItem = null;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.bLogOut = new System.Windows.Forms.Button();
             this.bSelect = new System.Windows.Forms.Button();
             this.bSearch = new System.Windows.Forms.Button();
@@ -37,7 +38,21 @@
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.dataTime = new System.Windows.Forms.DateTimePicker();
             this.dgTabela = new System.Windows.Forms.DataGridView();
+            this.tABDataSet = new TABProject.TABDataSet();
+            this.issueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.issueTableAdapter = new TABProject.TABDataSetTableAdapters.issueTableAdapter();
+            this.idissueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idproductmanagerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtopenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idrequestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtfinalcancelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgTabela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.issueBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bLogOut
@@ -117,13 +132,112 @@
             // 
             // dgTabela
             // 
+            this.dgTabela.AutoGenerateColumns = false;
             this.dgTabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTabela.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idissueDataGridViewTextBoxColumn,
+            this.idproductmanagerDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.resultDataGridViewTextBoxColumn,
+            this.dtopenDataGridViewTextBoxColumn,
+            this.idrequestDataGridViewTextBoxColumn,
+            this.dtfinalcancelDataGridViewTextBoxColumn});
+            this.dgTabela.DataSource = this.issueBindingSource;
             this.dgTabela.Location = new System.Drawing.Point(33, 105);
             this.dgTabela.Name = "dgTabela";
             this.dgTabela.RowHeadersWidth = 51;
             this.dgTabela.RowTemplate.Height = 24;
             this.dgTabela.Size = new System.Drawing.Size(633, 311);
             this.dgTabela.TabIndex = 9;
+            // 
+            // tABDataSet
+            // 
+            this.tABDataSet.DataSetName = "TABDataSet";
+            this.tABDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // issueBindingSource
+            // 
+            this.issueBindingSource.DataMember = "issue";
+            this.issueBindingSource.DataSource = this.tABDataSet;
+            // 
+            // issueTableAdapter
+            // 
+            this.issueTableAdapter.ClearBeforeFill = true;
+            // 
+            // idissueDataGridViewTextBoxColumn
+            // 
+            this.idissueDataGridViewTextBoxColumn.DataPropertyName = "id_issue";
+            this.idissueDataGridViewTextBoxColumn.HeaderText = "id_issue";
+            this.idissueDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idissueDataGridViewTextBoxColumn.Name = "idissueDataGridViewTextBoxColumn";
+            this.idissueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idissueDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idproductmanagerDataGridViewTextBoxColumn
+            // 
+            this.idproductmanagerDataGridViewTextBoxColumn.DataPropertyName = "id_product_manager";
+            this.idproductmanagerDataGridViewTextBoxColumn.HeaderText = "id_product_manager";
+            this.idproductmanagerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idproductmanagerDataGridViewTextBoxColumn.Name = "idproductmanagerDataGridViewTextBoxColumn";
+            this.idproductmanagerDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
+            this.typeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "status";
+            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // resultDataGridViewTextBoxColumn
+            // 
+            this.resultDataGridViewTextBoxColumn.DataPropertyName = "result";
+            this.resultDataGridViewTextBoxColumn.HeaderText = "result";
+            this.resultDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.resultDataGridViewTextBoxColumn.Name = "resultDataGridViewTextBoxColumn";
+            this.resultDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dtopenDataGridViewTextBoxColumn
+            // 
+            this.dtopenDataGridViewTextBoxColumn.DataPropertyName = "dt_open";
+            this.dtopenDataGridViewTextBoxColumn.HeaderText = "dt_open";
+            this.dtopenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dtopenDataGridViewTextBoxColumn.Name = "dtopenDataGridViewTextBoxColumn";
+            this.dtopenDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idrequestDataGridViewTextBoxColumn
+            // 
+            this.idrequestDataGridViewTextBoxColumn.DataPropertyName = "id_request";
+            this.idrequestDataGridViewTextBoxColumn.HeaderText = "id_request";
+            this.idrequestDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idrequestDataGridViewTextBoxColumn.Name = "idrequestDataGridViewTextBoxColumn";
+            this.idrequestDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dtfinalcancelDataGridViewTextBoxColumn
+            // 
+            this.dtfinalcancelDataGridViewTextBoxColumn.DataPropertyName = "dt_final_cancel";
+            this.dtfinalcancelDataGridViewTextBoxColumn.HeaderText = "dt_final_cancel";
+            this.dtfinalcancelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dtfinalcancelDataGridViewTextBoxColumn.Name = "dtfinalcancelDataGridViewTextBoxColumn";
+            this.dtfinalcancelDataGridViewTextBoxColumn.Width = 125;
             // 
             // ProductIssuesList
             // 
@@ -143,6 +257,8 @@
             this.Text = "Task Management System - Issues List";
             this.Load += new System.EventHandler(this.ProductIssuesList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgTabela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.issueBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +275,17 @@
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.DateTimePicker dataTime;
         private System.Windows.Forms.DataGridView dgTabela;
+        private TABDataSet tABDataSet;
+        private System.Windows.Forms.BindingSource issueBindingSource;
+        private TABDataSetTableAdapters.issueTableAdapter issueTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idissueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idproductmanagerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resultDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtopenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idrequestDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtfinalcancelDataGridViewTextBoxColumn;
     }
 }
