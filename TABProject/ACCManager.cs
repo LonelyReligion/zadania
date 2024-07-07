@@ -60,7 +60,7 @@ namespace TABProject
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            new NewIssue(request_id).Show();
+            new NewIssue(request_id).ShowDialog();
             //this.Hide();
         }
 
@@ -103,9 +103,11 @@ namespace TABProject
                 {
                     var iss = db.issues.Find(row.Cells[0].Value);//id taska potrzebne do zmiany
                     issuse_id = iss.id_issue;
+                    db.SaveChanges();
+                    dane();
                 }
                 EditIssue editIssue = new EditIssue(issuse_id); //, this);
-                editIssue.Show();
+                editIssue.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -114,6 +116,7 @@ namespace TABProject
             //
             //new EditIssue().Show();
             //this.Hide();
+            
         }
 
         private void bSave_Click(object sender, EventArgs e)
@@ -143,6 +146,7 @@ namespace TABProject
                         rqst.dt_final_cancel = DateTime.Now;
                     }
                     db.SaveChanges();
+                    dane();
                     //dataGridView1.DataSource = tasks.ToList(); //niedziala:/
                     //dataGridView1.Refresh(); //niedziala:/
                     String desc = rqst.description;
@@ -178,6 +182,7 @@ namespace TABProject
 
                         db.issues.Remove(iss);
                         db.SaveChanges();
+                        dane();
 
                     }
                 }

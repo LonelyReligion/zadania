@@ -82,7 +82,7 @@ namespace TABProject
                 request_id = rqst.id_request;
             }
             ACCManager requestDetailFrm = new ACCManager(request_id);
-            requestDetailFrm.Show();
+            requestDetailFrm.ShowDialog();
             }
             catch (Exception ex)
             {

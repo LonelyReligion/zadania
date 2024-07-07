@@ -46,7 +46,7 @@ namespace TABProject
 
         private void bAddNewTask_Click(object sender, EventArgs e)
         {
-            new AddTask().Show();
+            new AddTask().ShowDialog();
             //this.Hide();
         }
 
@@ -62,7 +62,8 @@ namespace TABProject
 
         private void bAddNewTask_Click_1(object sender, EventArgs e)
         {
-            new AddTask(issuse_id).Show();
+            new AddTask(issuse_id).ShowDialog();
+            dane();
         }
 
         private void bEditTask_Click(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace TABProject
                     task_id = tas.id_worker_task;
                 }
                 EditTask editTask = new EditTask(task_id); //, this);
-                editTask.Show();
+                editTask.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -169,6 +170,7 @@ namespace TABProject
 
                         db.worker_task.Remove(tas);
                         db.SaveChanges();
+                        dane();
 
                     }
                 }

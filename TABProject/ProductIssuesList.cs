@@ -57,7 +57,7 @@ namespace TABProject
                     issue_id = iss.id_issue;
                 }
                 ProductManager issuesDetailFrm = new ProductManager(issue_id);
-                issuesDetailFrm.Show();
+                issuesDetailFrm.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -67,7 +67,7 @@ namespace TABProject
 
         private void bLogOut_Click(object sender, EventArgs e)
         {
-            new LoginView().Show();
+            new LoginView().ShowDialog();
             this.Hide();
         }
 

@@ -68,6 +68,7 @@ namespace TABProject
                     tasks = db.worker_task;
                 }
                 dataGridView1.DataSource = tasks.ToList();
+
             }
         }
 
@@ -97,14 +98,17 @@ namespace TABProject
                         tsk.result = textBox1.Text; //results
                         tsk.dt_final_cancel = DateTime.Now;
                     }
-                    db.SaveChanges();
                     //dataGridView1.DataSource = tasks.ToList(); //niedziala:/
                     //dataGridView1.Refresh(); //niedziala:/
+                    db.SaveChanges();
+                    dane();
                 }
             }catch(Exception ex)
             {
                 //ktos nie zaznaczyl wiersza :/
             }
+
+            
         }
     }
 }
