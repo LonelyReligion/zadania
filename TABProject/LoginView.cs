@@ -23,8 +23,8 @@ namespace TABProject
 
                 foreach (var user in users)
                 {
-                    //user.password = Hash.GetHashSha256(user.password.Trim());
-                    //user.password = "Password";
+                    user.password = Hash.GetHashSha256(user.password.Trim()); //dodane haszhowanie
+                    //user.password = "Password"; 
                 }
 
                 try
@@ -53,7 +53,7 @@ namespace TABProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            password_encryption();
+            //password_encryption();
             //AGA 
             using (var db = new TABContext())
             {
@@ -66,11 +66,11 @@ namespace TABProject
 
                     string hashResult = Hash.GetHashSha256(tbPassword.Text.Trim());
                     bool correct_password = correct_login.password.Trim().Equals(hashResult);
+                   
+                   // Console.WriteLine(correct_login.password);
+                  //  Console.WriteLine(hashResult);
 
-                    Console.WriteLine(correct_login.password);
-                    Console.WriteLine(hashResult);
-
-                    //bool correct_password = correct_login.password.Trim().Equals(tbPassword.Text);
+                   // bool correct_password = correct_login.password.Trim().Equals(tbPassword.Text);
 
                     if (correct_password /*&& correct_login.active == true*/)
                     {

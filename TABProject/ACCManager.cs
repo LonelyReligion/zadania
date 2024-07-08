@@ -44,6 +44,7 @@ namespace TABProject
         public ACCManager()
         {
             InitializeComponent();
+
         }
 
         public ACCManager(decimal request_id)
@@ -61,6 +62,7 @@ namespace TABProject
         private void button1_Click_1(object sender, EventArgs e)
         {
             new NewIssue(request_id).ShowDialog();
+            dane();
             //this.Hide();
         }
 

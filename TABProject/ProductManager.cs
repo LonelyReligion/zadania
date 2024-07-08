@@ -78,6 +78,7 @@ namespace TABProject
                 }
                 EditTask editTask = new EditTask(task_id); //, this);
                 editTask.ShowDialog();
+                dane();
             }
             catch (Exception ex)
             {
