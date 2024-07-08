@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id_app_user" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="login" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="active" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="issues" Relationship="Self.FK_Issue_ProductManager" FromRole="app_user" ToRole="issue" />

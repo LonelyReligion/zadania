@@ -191,6 +191,11 @@
     <Compile Include="client.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TABDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TABDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EditIssue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,11 +267,7 @@
     <Compile Include="system.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="TABDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TABDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="TABDataSet.Designer.cs" />
     <Compile Include="version.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -325,6 +326,117 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Properties\DataSources\ACCManager.datasource" />
+    <None Include="Properties\DataSources\ACCRequestList.datasource" />
+    <None Include="Properties\DataSources\AddTask.datasource" />
+    <None Include="Properties\DataSources\AdminView.datasource" />
+    <None Include="Properties\DataSources\app_user.datasource" />
+    <None Include="Properties\DataSources\client.datasource" />
+    <None Include="Properties\DataSources\DataSet1.app_userDataTable.datasource" />
+    <None Include="Properties\DataSources\DataSet1.app_userRow.datasource" />
+    <None Include="Properties\DataSources\DataSet1.app_userRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DataSet1.app_userRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DataSet1.clientDataTable.datasource" />
+    <None Include="Properties\DataSources\DataSet1.clientRow.datasource" />
+    <None Include="Properties\DataSources\DataSet1.clientRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DataSet1.clientRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DataSet1.datasource" />
+    <None Include="Properties\DataSources\DataSet1.issueDataTable.datasource" />
+    <None Include="Properties\DataSources\DataSet1.issueRow.datasource" />
+    <None Include="Properties\DataSources\DataSet1.issueRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DataSet1.issueRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DataSet1.requestDataTable.datasource" />
+    <None Include="Properties\DataSources\DataSet1.requestRow.datasource" />
+    <None Include="Properties\DataSources\DataSet1.requestRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DataSet1.requestRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DataSet1.systemDataTable.datasource" />
+    <None Include="Properties\DataSources\DataSet1.systemRow.datasource" />
+    <None Include="Properties\DataSources\DataSet1.systemRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DataSet1.systemRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DataSet1.versionDataTable.datasource" />
+    <None Include="Properties\DataSources\DataSet1.versionRow.datasource" />
+    <None Include="Properties\DataSources\DataSet1.versionRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DataSet1.versionRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\DataSet1.worker_taskDataTable.datasource" />
+    <None Include="Properties\DataSources\DataSet1.worker_taskRow.datasource" />
+    <None Include="Properties\DataSources\DataSet1.worker_taskRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\DataSet1.worker_taskRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\EditIssue.datasource" />
+    <None Include="Properties\DataSources\EditTask.datasource" />
+    <None Include="Properties\DataSources\Hash.datasource" />
+    <None Include="Properties\DataSources\issue.datasource" />
+    <None Include="Properties\DataSources\LoginView.datasource" />
+    <None Include="Properties\DataSources\NewIssue.datasource" />
+    <None Include="Properties\DataSources\ProductIssuesList.datasource" />
+    <None Include="Properties\DataSources\ProductManager.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\request.datasource" />
+    <None Include="Properties\DataSources\sysdiagram.datasource" />
+    <None Include="Properties\DataSources\system.datasource" />
+    <None Include="Properties\DataSources\TABContext.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.app_userDataTable.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.app_userRow.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.app_userRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.app_userRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.clientDataTable.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.clientRow.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.clientRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.clientRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.issueDataTable.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.issueRow.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.issueRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.issueRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.requestDataTable.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.requestRow.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.requestRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.requestRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.systemDataTable.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.systemRow.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.systemRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.systemRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.versionDataTable.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.versionRow.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.versionRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.versionRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.worker_taskDataTable.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.worker_taskRow.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.worker_taskRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\TABDataSet.worker_taskRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.app_userTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.clientTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.issueTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.requestTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.systemTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.versionTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.DataSet1TableAdapters.worker_taskTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\TABProject.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.app_userTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.clientTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.issueTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.requestTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.systemTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.versionTableAdapter.datasource" />
+    <None Include="Properties\DataSources\TABProject.TABDataSetTableAdapters.worker_taskTableAdapter.datasource" />
+    <None Include="Properties\DataSources\version.datasource" />
+    <None Include="Properties\DataSources\Worker.datasource" />
+    <None Include="Properties\DataSources\worker_task.datasource" />
+    <None Include="TABDataSet.xsc">
+      <DependentUpon>TABDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TABDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TABDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TABDataSet.xss">
+      <DependentUpon>TABDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -338,17 +450,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TABDataSet.xsc">
-      <DependentUpon>TABDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TABDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TABDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TABDataSet.xss">
-      <DependentUpon>TABDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

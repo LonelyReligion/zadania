@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id_app_user" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="type" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="password" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="password" Type="nchar" MaxLength="100" Nullable="false" />
     <Property Name="login" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="active" Type="bit" Nullable="false" />
   </EntityType>

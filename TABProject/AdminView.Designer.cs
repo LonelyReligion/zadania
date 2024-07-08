@@ -47,25 +47,36 @@
             this.lNewPassword = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbRepeat = new System.Windows.Forms.TextBox();
-            this.tABDataSet = new TABProject.TABDataSet();
-            this.appuserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.app_userTableAdapter = new TABProject.TABDataSetTableAdapters.app_userTableAdapter();
+            this.dataSet1 = new TABProject.DataSet1();
+            this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appuserBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.app_userTableAdapter1 = new TABProject.DataSet1TableAdapters.app_userTableAdapter();
             this.idappuserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.appuserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tABDataSet = new TABProject.TABDataSet();
+            this.app_userTableAdapter = new TABProject.TABDataSetTableAdapters.app_userTableAdapter();
+            this.workertaskTableAdapterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appuserBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workertaskTableAdapterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // bLogOut
             // 
-            this.bLogOut.Location = new System.Drawing.Point(679, 12);
-            this.bLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bLogOut.Location = new System.Drawing.Point(509, 10);
+            this.bLogOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bLogOut.Name = "bLogOut";
-            this.bLogOut.Size = new System.Drawing.Size(109, 50);
+            this.bLogOut.Size = new System.Drawing.Size(82, 41);
             this.bLogOut.TabIndex = 21;
             this.bLogOut.Text = "Log out";
             this.bLogOut.UseVisualStyleBackColor = true;
@@ -73,35 +84,35 @@
             // 
             // tbemail
             // 
-            this.tbemail.Location = new System.Drawing.Point(15, 107);
-            this.tbemail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbemail.Location = new System.Drawing.Point(11, 87);
+            this.tbemail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbemail.Name = "tbemail";
-            this.tbemail.Size = new System.Drawing.Size(183, 22);
+            this.tbemail.Size = new System.Drawing.Size(138, 20);
             this.tbemail.TabIndex = 22;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(15, 161);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbPassword.Location = new System.Drawing.Point(11, 131);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(183, 22);
+            this.tbPassword.Size = new System.Drawing.Size(138, 20);
             this.tbPassword.TabIndex = 23;
             // 
             // comboBoxType
             // 
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(15, 214);
-            this.comboBoxType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxType.Location = new System.Drawing.Point(11, 174);
+            this.comboBoxType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxType.Size = new System.Drawing.Size(126, 21);
             this.comboBoxType.TabIndex = 24;
             // 
             // bAdd
             // 
-            this.bAdd.Location = new System.Drawing.Point(12, 253);
-            this.bAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bAdd.Location = new System.Drawing.Point(9, 206);
+            this.bAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(91, 33);
+            this.bAdd.Size = new System.Drawing.Size(68, 27);
             this.bAdd.TabIndex = 25;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
@@ -109,18 +120,20 @@
             // lAddNewUser
             // 
             this.lAddNewUser.AutoSize = true;
-            this.lAddNewUser.Location = new System.Drawing.Point(12, 46);
+            this.lAddNewUser.Location = new System.Drawing.Point(9, 37);
+            this.lAddNewUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lAddNewUser.Name = "lAddNewUser";
-            this.lAddNewUser.Size = new System.Drawing.Size(91, 16);
+            this.lAddNewUser.Size = new System.Drawing.Size(75, 13);
             this.lAddNewUser.TabIndex = 26;
             this.lAddNewUser.Text = "Add new user:";
             // 
             // lEmail
             // 
             this.lEmail.AutoSize = true;
-            this.lEmail.Location = new System.Drawing.Point(12, 88);
+            this.lEmail.Location = new System.Drawing.Point(9, 72);
+            this.lEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lEmail.Name = "lEmail";
-            this.lEmail.Size = new System.Drawing.Size(81, 16);
+            this.lEmail.Size = new System.Drawing.Size(64, 13);
             this.lEmail.TabIndex = 27;
             this.lEmail.Text = "User\'s login:";
             this.lEmail.Click += new System.EventHandler(this.lEmail_Click);
@@ -128,27 +141,29 @@
             // lPassword
             // 
             this.lPassword.AutoSize = true;
-            this.lPassword.Location = new System.Drawing.Point(12, 142);
+            this.lPassword.Location = new System.Drawing.Point(9, 115);
+            this.lPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lPassword.Name = "lPassword";
-            this.lPassword.Size = new System.Drawing.Size(111, 16);
+            this.lPassword.Size = new System.Drawing.Size(87, 13);
             this.lPassword.TabIndex = 28;
             this.lPassword.Text = "User\'s password:";
             // 
             // lType
             // 
             this.lType.AutoSize = true;
-            this.lType.Location = new System.Drawing.Point(12, 195);
+            this.lType.Location = new System.Drawing.Point(9, 158);
+            this.lType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lType.Name = "lType";
-            this.lType.Size = new System.Drawing.Size(42, 16);
+            this.lType.Size = new System.Drawing.Size(34, 13);
             this.lType.TabIndex = 29;
             this.lType.Text = "Type:";
             // 
             // bDeactivate
             // 
-            this.bDeactivate.Location = new System.Drawing.Point(341, 388);
-            this.bDeactivate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bDeactivate.Location = new System.Drawing.Point(256, 315);
+            this.bDeactivate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bDeactivate.Name = "bDeactivate";
-            this.bDeactivate.Size = new System.Drawing.Size(122, 32);
+            this.bDeactivate.Size = new System.Drawing.Size(92, 26);
             this.bDeactivate.TabIndex = 31;
             this.bDeactivate.Text = "Deactivate user";
             this.bDeactivate.UseVisualStyleBackColor = true;
@@ -164,47 +179,49 @@
             this.passwordDataGridViewTextBoxColumn,
             this.loginDataGridViewTextBoxColumn,
             this.activeDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.appuserBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(213, 29);
+            this.dataGridView1.DataSource = this.appuserBindingSource2;
+            this.dataGridView1.Location = new System.Drawing.Point(160, 24);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(376, 354);
+            this.dataGridView1.Size = new System.Drawing.Size(282, 288);
             this.dataGridView1.TabIndex = 33;
             // 
             // bActivate
             // 
-            this.bActivate.Location = new System.Drawing.Point(213, 388);
-            this.bActivate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bActivate.Location = new System.Drawing.Point(160, 315);
+            this.bActivate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bActivate.Name = "bActivate";
-            this.bActivate.Size = new System.Drawing.Size(122, 32);
+            this.bActivate.Size = new System.Drawing.Size(92, 26);
             this.bActivate.TabIndex = 34;
             this.bActivate.Text = "Activate user";
             this.bActivate.UseVisualStyleBackColor = true;
             // 
             // tbNewPassword
             // 
-            this.tbNewPassword.Location = new System.Drawing.Point(609, 264);
-            this.tbNewPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbNewPassword.Location = new System.Drawing.Point(457, 214);
+            this.tbNewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbNewPassword.Name = "tbNewPassword";
-            this.tbNewPassword.Size = new System.Drawing.Size(155, 22);
+            this.tbNewPassword.Size = new System.Drawing.Size(117, 20);
             this.tbNewPassword.TabIndex = 35;
             // 
             // lChangePassword
             // 
             this.lChangePassword.AutoSize = true;
-            this.lChangePassword.Location = new System.Drawing.Point(606, 214);
+            this.lChangePassword.Location = new System.Drawing.Point(454, 174);
+            this.lChangePassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lChangePassword.Name = "lChangePassword";
-            this.lChangePassword.Size = new System.Drawing.Size(158, 16);
+            this.lChangePassword.Size = new System.Drawing.Size(125, 13);
             this.lChangePassword.TabIndex = 36;
             this.lChangePassword.Text = "Change user\'s password:";
             // 
             // bChange
             // 
-            this.bChange.Location = new System.Drawing.Point(609, 350);
-            this.bChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bChange.Location = new System.Drawing.Point(457, 284);
+            this.bChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bChange.Name = "bChange";
-            this.bChange.Size = new System.Drawing.Size(122, 32);
+            this.bChange.Size = new System.Drawing.Size(92, 26);
             this.bChange.TabIndex = 37;
             this.bChange.Text = "Change";
             this.bChange.UseVisualStyleBackColor = true;
@@ -212,89 +229,109 @@
             // lNewPassword
             // 
             this.lNewPassword.AutoSize = true;
-            this.lNewPassword.Location = new System.Drawing.Point(606, 246);
+            this.lNewPassword.Location = new System.Drawing.Point(454, 200);
+            this.lNewPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lNewPassword.Name = "lNewPassword";
-            this.lNewPassword.Size = new System.Drawing.Size(99, 16);
+            this.lNewPassword.Size = new System.Drawing.Size(80, 13);
             this.lNewPassword.TabIndex = 38;
             this.lNewPassword.Text = "New password:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(606, 297);
+            this.label1.Location = new System.Drawing.Point(454, 241);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 16);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 39;
             this.label1.Text = "Repeat password:";
             // 
             // tbRepeat
             // 
-            this.tbRepeat.Location = new System.Drawing.Point(609, 315);
-            this.tbRepeat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbRepeat.Location = new System.Drawing.Point(457, 256);
+            this.tbRepeat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbRepeat.Name = "tbRepeat";
-            this.tbRepeat.Size = new System.Drawing.Size(155, 22);
+            this.tbRepeat.Size = new System.Drawing.Size(117, 20);
             this.tbRepeat.TabIndex = 40;
             // 
-            // tABDataSet
+            // dataSet1
             // 
-            this.tABDataSet.DataSetName = "TABDataSet";
-            this.tABDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSet1BindingSource
+            // 
+            this.dataSet1BindingSource.DataSource = this.dataSet1;
+            this.dataSet1BindingSource.Position = 0;
+            // 
+            // appuserBindingSource1
+            // 
+            this.appuserBindingSource1.DataMember = "app_user";
+            this.appuserBindingSource1.DataSource = this.dataSet1BindingSource;
+            // 
+            // app_userTableAdapter1
+            // 
+            this.app_userTableAdapter1.ClearBeforeFill = true;
+            // 
+            // idappuserDataGridViewTextBoxColumn
+            // 
+            this.idappuserDataGridViewTextBoxColumn.DataPropertyName = "id_app_user";
+            this.idappuserDataGridViewTextBoxColumn.HeaderText = "id_app_user";
+            this.idappuserDataGridViewTextBoxColumn.Name = "idappuserDataGridViewTextBoxColumn";
+            this.idappuserDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "login";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            // 
+            // activeDataGridViewCheckBoxColumn
+            // 
+            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "active";
+            this.activeDataGridViewCheckBoxColumn.HeaderText = "active";
+            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
             // 
             // appuserBindingSource
             // 
             this.appuserBindingSource.DataMember = "app_user";
             this.appuserBindingSource.DataSource = this.tABDataSet;
             // 
+            // tABDataSet
+            // 
+            this.tABDataSet.DataSetName = "TABDataSet";
+            this.tABDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // app_userTableAdapter
             // 
             this.app_userTableAdapter.ClearBeforeFill = true;
             // 
-            // idappuserDataGridViewTextBoxColumn
+            // workertaskTableAdapterBindingSource
             // 
-            this.idappuserDataGridViewTextBoxColumn.DataPropertyName = "id_app_user";
-            this.idappuserDataGridViewTextBoxColumn.HeaderText = "id_app_user";
-            this.idappuserDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idappuserDataGridViewTextBoxColumn.Name = "idappuserDataGridViewTextBoxColumn";
-            this.idappuserDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idappuserDataGridViewTextBoxColumn.Width = 125;
+            this.workertaskTableAdapterBindingSource.DataSource = typeof(TABProject.TABDataSetTableAdapters.worker_taskTableAdapter);
             // 
-            // typeDataGridViewTextBoxColumn
+            // appuserBindingSource2
             // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
-            this.typeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // passwordDataGridViewTextBoxColumn
-            // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // loginDataGridViewTextBoxColumn
-            // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "login";
-            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // activeDataGridViewCheckBoxColumn
-            // 
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "active";
-            this.activeDataGridViewCheckBoxColumn.HeaderText = "active";
-            this.activeDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
-            this.activeDataGridViewCheckBoxColumn.Width = 125;
+            this.appuserBindingSource2.DataMember = "app_user";
+            this.appuserBindingSource2.DataSource = this.dataSet1BindingSource;
             // 
             // AdminView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tbRepeat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lNewPassword);
@@ -313,13 +350,18 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbemail);
             this.Controls.Add(this.bLogOut);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminView";
             this.Text = "Task Management System - Admin Console";
             this.Load += new System.EventHandler(this.AdminView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tABDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workertaskTableAdapterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appuserBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,10 +390,16 @@
         private TABDataSet tABDataSet;
         private System.Windows.Forms.BindingSource appuserBindingSource;
         private TABDataSetTableAdapters.app_userTableAdapter app_userTableAdapter;
+        private System.Windows.Forms.BindingSource workertaskTableAdapterBindingSource;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource dataSet1BindingSource;
+        private System.Windows.Forms.BindingSource appuserBindingSource1;
+        private DataSet1TableAdapters.app_userTableAdapter app_userTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idappuserDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource appuserBindingSource2;
     }
 }
