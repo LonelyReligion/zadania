@@ -1,5 +1,5 @@
-<h1>System zgłoszenia zadań</h1> 
-<br> Projekt wykonany w ramach przedmiotu Tworzenie aplikacji bazodanowych. Zadaniem programu jest wspomaganie procesu wytwarzania i utrzymania systemu informatycznego.
+<h1>System zgłaszenia zadań</h1> 
+<br> Projekt wykonany w ramach przedmiotu Tworzenie Aplikacji Bazodanowych. Zadaniem programu jest wspomaganie procesu wytwarzania i utrzymania systemu informatycznego.
 
 ![obraz](https://github.com/user-attachments/assets/46374fa8-0860-490a-814b-7570f1409288)
 ![obraz](https://github.com/user-attachments/assets/4447d634-7a77-40df-98a3-5c113dbb2997)
